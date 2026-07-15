@@ -37,3 +37,12 @@ CCC is supported by Wellcome Trust grant 088786/C/09/Z and follows on from GETCa
 - [GETCampy sequencing SOPs](https://www.protocols.io/view/getcampy-sequencing-protocols-e6nvw4jpwlmk/v1)
 - Data management plan: TBC
 - Bioinformatics analysis pipelines: TBC
+
+
+## Website sections
+
+- [Science](https://campylobacter-control-campaign.github.io/website/science.html)
+- [For members](https://campylobacter-control-campaign.github.io/website/members.html)
+- [CCC PhD programme](https://campylobacter-control-campaign.github.io/website/phd.html)
+- [Join CCC](https://campylobacter-control-campaign.github.io/website/join.html)
+- [French landing page](https://campylobacter-control-campaign.github.io/website/fr/)
