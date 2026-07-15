@@ -48,3 +48,5 @@ CCC is supported by Wellcome Trust grant 088786/C/09/Z and follows on from GETCa
 - [French landing page](https://campylobacter-control-campaign.github.io/website/fr/)
 
 - [CCC kick-off workshop Flickr album](https://www.flickr.com/photos/204805075@N06/albums/72177720334690396/)
+
+Current consortium members listed on the website: 65 across 16 countries.

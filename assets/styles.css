@@ -121,3 +121,11 @@
 .gallery-card-body p{color:var(--muted)}
 .photo-warning{font-size:.9rem;background:var(--soft);border-left:.25rem solid var(--accent2);padding:.6rem;border-radius:.5rem;color:var(--ink)!important}
 @media(max-width:880px){.home-photo-strip,.gallery-grid,.featured-photo{grid-template-columns:1fr}.home-photo-strip img,.gallery-card img{height:15rem}}
+
+
+/* Photo sizing refinement */
+.home-hero-photo{aspect-ratio:16/9;max-height:14rem;object-fit:cover}
+.home-photo-strip img{height:12rem}
+.gallery-card img{height:14rem}
+.featured-photo img{max-height:28rem;object-fit:cover}
+@media(max-width:880px){.home-photo-strip img,.gallery-card img{height:11rem}.home-hero-photo{max-height:12rem}.featured-photo img{max-height:18rem}}
