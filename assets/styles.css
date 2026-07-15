@@ -12,3 +12,8 @@
 .photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
 .photo-placeholder{min-height:12rem;border:1px dashed var(--line);border-radius:1.25rem;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-weight:850}
 @media(max-width:880px){.network-map,.photo-grid{grid-template-columns:1fr}}
+
+
+.actual-map{margin:1.75rem 0 1.25rem}
+.actual-map img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:1.5rem;background:#fff;box-shadow:var(--shadow)}
+.actual-map figcaption{margin-top:.65rem;color:var(--muted);font-size:.95rem}
