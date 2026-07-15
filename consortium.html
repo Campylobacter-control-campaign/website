@@ -1,30 +1,23 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Consortium · Campylobacter Control Campaign</title><meta name="description" content="Campylobacter Control Campaign project website."><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ+1JO2I51KkhDUDN2s0Qq5p4mH6py4=" crossorigin=""><link rel="stylesheet" href="assets/styles.css"></head><body><header class="site-header"><a class="brand" href="index.html"><img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo"><span class="brand-text">Campylobacter Control Campaign</span></a><nav class="nav"><a href="index.html#about">About</a><a href="protocols.html">Protocols</a><a href="data.html">Data</a><a href="workshops.html">Workshops</a><a href="communications.html">Comms</a><a href="consortium.html">Consortium</a></nav></header><main><section class="page-hero"><p class="section-kicker">People</p><h1>Consortium</h1><p class="lead">A distributed One Health network of investigators, institutions and implementation partners.</p></section><section class="page">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Consortium · Campylobacter Control Campaign</title><meta name="description" content="Campylobacter Control Campaign project website."><link rel="stylesheet" href="assets/styles.css"></head><body><header class="site-header"><a class="brand" href="index.html"><img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo"><span class="brand-text">Campylobacter Control Campaign</span></a><nav class="nav"><a href="index.html#about">About</a><a href="protocols.html">Protocols</a><a href="data.html">Data</a><a href="workshops.html">Workshops</a><a href="communications.html">Comms</a><a href="consortium.html">Consortium</a></nav></header><main><section class="page-hero"><p class="section-kicker">People</p><h1>Consortium</h1><p class="lead">A distributed One Health network of investigators, institutions and implementation partners.</p></section><section class="page">
 <p>The CCC consortium is a collaborative One Health network spanning clinical, veterinary, environmental, genomic, epidemiological, modelling and public-health expertise.</p>
 
 <div class="notice">This page lists confirmed CCC members by country and institution. Public email addresses are not displayed. Personal profile links and photographs will be added only where approved.</div>
 
 <section class="network-block">
-  <p class="section-kicker">Network map</p>
+  <p class="section-kicker">Network overview</p>
   <h2>Countries and partner sites</h2>
-  <p class="wide">CCC is a distributed network with participating investigators and institutions across Africa, Asia, Europe and Latin America. The map below summarises current country participation. A full interactive map with institution-level links can be added later.</p>
-  
-  
-<div class="interactive-map-panel">
-  <div id="ccc-map" class="ccc-map" aria-label="Interactive map of CCC participating countries"></div>
-  <p class="map-caption">Interactive map of current CCC participating countries and institutional partners. Locations are approximate and shown at institution or country/city level.</p>
-</div>
-
-
+  <p class="wide">CCC is a distributed network with participating investigators and institutions across Africa, Asia, Europe and Latin America.</p>
   <div class="network-map">
     <article class="map-card"><h3>West Africa</h3><div class="country-chips"><span class="country-chip">Benin</span><span class="country-chip">Burkina Faso</span><span class="country-chip">Côte d’Ivoire</span><span class="country-chip">Ghana</span><span class="country-chip">Mali</span><span class="country-chip">Nigeria</span><span class="country-chip">The Gambia</span></div></article>
 <article class="map-card"><h3>East and Southern Africa</h3><div class="country-chips"><span class="country-chip">Ethiopia</span><span class="country-chip">Malawi</span><span class="country-chip">Mozambique</span></div></article>
 <article class="map-card"><h3>Central Africa</h3><div class="country-chips"><span class="country-chip">Cameroon</span></div></article>
 <article class="map-card"><h3>South Asia</h3><div class="country-chips"><span class="country-chip">Bangladesh</span><span class="country-chip">India</span></div></article>
 <article class="map-card"><h3>Southeast Asia</h3><div class="country-chips"><span class="country-chip">Thailand</span></div></article>
-<article class="map-card"><h3>North Africa and Middle East</h3><div class="country-chips"><span class="country-chip">Egypt</span></div></article>
+<article class="map-card"><h3>North Africa</h3><div class="country-chips"><span class="country-chip">Egypt</span></div></article>
 <article class="map-card"><h3>Latin America</h3><div class="country-chips"><span class="country-chip">Colombia</span></div></article>
 <article class="map-card"><h3>United Kingdom</h3><div class="country-chips"><span class="country-chip">UK</span></div></article>
   </div>
+  <div class="notice">A proper map will be added once the institution-level locations and profile links have been checked.</div>
 </section>
 
 <section class="network-block">
@@ -509,47 +502,7 @@
   <h2>Maintaining this page</h2>
   <p>Consortium membership, country/site investigator details, profile links and photographs will be maintained by the project coordination team in consultation with participating investigators and institutions.</p>
 </section>
-</section></main><footer class="site-footer"><p><a href="index.html">Campylobacter Control Campaign</a></p><p class="small">This website is under active development.</p></footer><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  if (!window.L) {
-    var mapEl = document.getElementById("ccc-map");
-    if (mapEl) mapEl.innerHTML = "<p class='map-fallback'>Map could not load. Please check your browser connection or content blocking settings.</p>";
-    return;
-  }
+</section></main><footer class="site-footer"><p><a href="index.html">Campylobacter Control Campaign</a></p><p class="small">This website is under active development.</p></footer>
 
-  var map = L.map("ccc-map", {
-    scrollWheelZoom: false,
-    worldCopyJump: true
-  }).setView([10, 15], 2);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
-  var markers = [{"country": "Bangladesh", "lat": 24.75, "lng": 90.4, "summary": "Bangladesh Agricultural University, Mymensingh"}, {"country": "Benin", "lat": 6.42, "lng": 2.34, "summary": "University of Abomey-Calavi"}, {"country": "Burkina Faso", "lat": 12.37, "lng": -1.53, "summary": "Université Joseph KI-ZERBO / Université Thomas SANKARA, Ouagadougou"}, {"country": "Cameroon", "lat": 5.45, "lng": 10.06, "summary": "University of Dschang"}, {"country": "Colombia", "lat": 4.7, "lng": -74.21, "summary": "AGROSAVIA, Mosquera"}, {"country": "Côte d’Ivoire", "lat": 5.35, "lng": -4.01, "summary": "Centre Suisse de Recherches Scientifiques en Côte d’Ivoire"}, {"country": "Egypt", "lat": 30.02, "lng": 31.5, "summary": "Zewail City of Science and Technology"}, {"country": "Ethiopia", "lat": 11.59, "lng": 37.39, "summary": "Bahir Dar University"}, {"country": "Ghana", "lat": 9.4, "lng": -0.84, "summary": "University for Development Studies, Tamale"}, {"country": "Ghana", "lat": 6.67, "lng": -1.57, "summary": "KCCR / KNUST, Kumasi"}, {"country": "India", "lat": 12.97, "lng": 77.59, "summary": "Kempegowda Institute of Medical Sciences, Bengaluru"}, {"country": "Malawi", "lat": -15.79, "lng": 35.0, "summary": "Kamuzu University of Health Sciences"}, {"country": "Mali", "lat": 12.64, "lng": -8.0, "summary": "Centre d’Infectiologie Charles Mérieux-Mali"}, {"country": "Mozambique", "lat": -25.4, "lng": 32.81, "summary": "Centro de Investigação em Saúde de Manhiça / CHAMPS Network"}, {"country": "Nigeria", "lat": 6.52, "lng": 3.38, "summary": "University of Lagos / Nigerian Institute of Medical Research"}, {"country": "Nigeria", "lat": 6.86, "lng": 3.45, "summary": "Mountain Top University"}, {"country": "Thailand", "lat": 18.79, "lng": 98.98, "summary": "Chiang Mai University"}, {"country": "Thailand", "lat": 7.01, "lng": 100.5, "summary": "Prince of Songkla University"}, {"country": "The Gambia", "lat": 13.46, "lng": -16.68, "summary": "MRC Unit The Gambia at LSHTM, Banjul"}, {"country": "The Gambia", "lat": 13.31, "lng": -14.22, "summary": "Upper River Region / Department of Livestock Services / NARI"}, {"country": "United Kingdom", "lat": 51.75, "lng": -1.25, "summary": "University of Oxford / Ineos Oxford Institute"}, {"country": "United Kingdom", "lat": 51.62, "lng": -3.94, "summary": "Swansea University"}, {"country": "United Kingdom", "lat": 51.52, "lng": -0.13, "summary": "London School of Hygiene & Tropical Medicine"}];
-
-  var cccIcon = L.divIcon({
-    className: "ccc-marker",
-    html: "<span></span>",
-    iconSize: [18, 18],
-    iconAnchor: [9, 9],
-    popupAnchor: [0, -10]
-  });
-
-  var bounds = [];
-  markers.forEach(function (m) {
-    var marker = L.marker([m.lat, m.lng], {icon: cccIcon})
-      .addTo(map)
-      .bindPopup("<strong>" + m.country + "</strong><br>" + m.summary);
-    bounds.push([m.lat, m.lng]);
-  });
-
-  if (bounds.length > 0) {
-    map.fitBounds(bounds, {padding: [35, 35]});
-  }
-});
-</script>
 
 </body></html>
