@@ -63,3 +63,30 @@
 .photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
 .photo-placeholder{min-height:12rem;border:1px dashed var(--line);border-radius:1.25rem;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-weight:850}
 @media(max-width:880px){.network-map,.photo-grid{grid-template-columns:1fr}}
+
+
+/* CCC site tidy update */
+.brand-logo{width:2.4rem;height:2.4rem;border-radius:.7rem;object-fit:cover;background:#fff;border:1px solid var(--line)}
+.compact-hero{min-height:64vh}
+.hero-logo{display:none}
+.quick-links{display:grid;gap:.6rem;margin-top:1.25rem}
+.quick-links a{display:block;padding:.75rem .9rem;border:1px solid var(--line);border-radius:.9rem;background:var(--soft);color:var(--ink);text-decoration:none;font-weight:750}
+.quick-links a:hover{color:var(--accent);border-color:var(--accent)}
+.funder-strip{background:#fff}
+.leadership-grid,.profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+.leadership-card,.profile-card{background:var(--panel);border:1px solid var(--line);border-radius:1.25rem;padding:1.25rem;box-shadow:0 10px 30px rgba(19,32,28,.055)}
+.profile-chip{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:.35rem .65rem;font-size:.82rem;font-weight:750;color:var(--muted);text-decoration:none;background:var(--soft)}
+.profile-photo{min-height:9rem;border:1px dashed var(--line);border-radius:1rem;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-weight:850;margin-bottom:1rem}
+.plotly-map-card{background:#fff;border:1px solid var(--line);border-radius:1.5rem;padding:1rem;box-shadow:var(--shadow);margin-top:1.5rem}
+.plotly-map{width:100%;height:520px}
+.map-caption{margin:.75rem .25rem 0;color:var(--muted);font-size:.95rem}
+.network-block{margin:3.5rem 0}
+.network-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+.map-card{background:var(--panel);border:1px solid var(--line);border-radius:1.25rem;padding:1.25rem;box-shadow:0 10px 30px rgba(19,32,28,.055)}
+.map-card h3{margin-bottom:.75rem}
+.country-chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.country-chip{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:.35rem .65rem;font-weight:750;font-size:.9rem}
+.site-investigator-table{margin-top:1.25rem}
+.photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
+.photo-placeholder{min-height:12rem;border:1px dashed var(--line);border-radius:1.25rem;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-weight:850}
+@media(max-width:880px){.leadership-grid,.profile-grid,.network-map,.photo-grid{grid-template-columns:1fr}.plotly-map{height:420px}}
