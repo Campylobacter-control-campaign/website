@@ -46,3 +46,5 @@ CCC is supported by Wellcome Trust grant 088786/C/09/Z and follows on from GETCa
 - [CCC PhD programme](https://campylobacter-control-campaign.github.io/website/phd.html)
 - [Join CCC](https://campylobacter-control-campaign.github.io/website/join.html)
 - [French landing page](https://campylobacter-control-campaign.github.io/website/fr/)
+
+- [CCC kick-off workshop Flickr album](https://www.flickr.com/photos/204805075@N06/albums/72177720334690396/)
