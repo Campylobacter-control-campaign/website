@@ -1,0 +1,30 @@
+{
+  "updated": "25 September 2026",
+  "headline": [
+    {"label": "Children screened", "value": 1054, "context": "The Gambia"},
+    {"label": "Cases enrolled", "value": 300, "context": "The Gambia"},
+    {"label": "Current sequencing collection", "value": 322, "context": "MRCG-Fajara"},
+    {"label": "Samples prepared for transfer", "value": 206, "context": "Nigeria"}
+  ],
+  "sampling": [
+    {"site": "The Gambia", "category": "Cases enrolled", "value": 300},
+    {"site": "The Gambia", "category": "Household", "value": 80},
+    {"site": "The Gambia", "category": "Environmental", "value": 42},
+    {"site": "The Gambia", "category": "Water", "value": 17},
+    {"site": "The Gambia", "category": "Chicken / turkey", "value": 102},
+    {"site": "The Gambia", "category": "Sheep", "value": 58},
+    {"site": "Burkina Faso", "category": "Chicken", "value": 70},
+    {"site": "Ghana", "category": "Animals", "value": 50},
+    {"site": "Nigeria", "category": "Prepared for transfer", "value": 206}
+  ],
+  "genomics": [
+    {"label": "Rectal swabs", "value": 200, "context": "MRCG-Fajara collection"},
+    {"label": "Stool samples", "value": 100, "context": "MRCG-Fajara collection"},
+    {"label": "Isolates", "value": 22, "context": "MRCG-Fajara collection"}
+  ],
+  "notes": [
+    "Counts are aggregate operational figures and contain no participant-level information.",
+    "The dashboard is a project snapshot rather than a complete count across every CCC partner site.",
+    "Sampling, sequencing and transfer counts describe different stages of the workflow and should not be summed."
+  ]
+}
