@@ -1,35 +1,136 @@
 {
   "updated": "25 September 2026",
   "headline": [
-    {"label": "Children screened", "value": 53, "context": "The Gambia"},
-    {"label": "Diarrhoea cases enrolled", "value": 28, "context": "The Gambia"},
-    {"label": "Human specimens collected", "value": 148, "context": "Cases, community children and household members"},
-    {"label": "Community animals sampled", "value": 103, "context": "The Gambia"}
+    {
+      "label": "Children screened",
+      "value": 53,
+      "context": "The Gambia"
+    },
+    {
+      "label": "Diarrhoea cases enrolled",
+      "value": 28,
+      "context": "The Gambia"
+    },
+    {
+      "label": "Human specimens collected",
+      "value": 148,
+      "context": "Cases, community children and household members"
+    },
+    {
+      "label": "Community animals sampled",
+      "value": 103,
+      "context": "The Gambia"
+    }
+  ],
+  "progress": [
+    {
+      "label": "Diarrhoea cases",
+      "value": 28,
+      "target": 300,
+      "context": "Gambia enrolment target"
+    },
+    {
+      "label": "Community controls",
+      "value": 10,
+      "target": 135,
+      "context": "Gambia protocol target"
+    },
+    {
+      "label": "Community reservoir animals",
+      "value": 103,
+      "target": 400,
+      "context": "Up to 100 each: poultry, cattle, equids, goat/sheep/pig"
+    }
   ],
   "sampling": [
-    {"site": "The Gambia", "category": "Children screened", "value": 53},
-    {"site": "The Gambia", "category": "Eligible children", "value": 41},
-    {"site": "The Gambia", "category": "Diarrhoea cases enrolled", "value": 28},
-    {"site": "The Gambia", "category": "Community children enrolled", "value": 10},
-    {"site": "The Gambia", "category": "Household members enrolled", "value": 12},
-    {"site": "The Gambia", "category": "Human specimens collected", "value": 148},
-    {"site": "The Gambia", "category": "Index-household animals sampled", "value": 5},
-    {"site": "The Gambia", "category": "Index-household animal specimens", "value": 10},
-    {"site": "The Gambia", "category": "Household environmental specimens", "value": 6},
-    {"site": "The Gambia", "category": "Household water specimens", "value": 4},
-    {"site": "The Gambia", "category": "Community animals sampled", "value": 103},
-    {"site": "The Gambia", "category": "Community animal specimens collected", "value": 206}
+    {
+      "site": "The Gambia",
+      "category": "Children screened",
+      "value": 53
+    },
+    {
+      "site": "The Gambia",
+      "category": "Eligible children",
+      "value": 41
+    },
+    {
+      "site": "The Gambia",
+      "category": "Diarrhoea cases enrolled",
+      "value": 28
+    },
+    {
+      "site": "The Gambia",
+      "category": "Community children enrolled",
+      "value": 10
+    },
+    {
+      "site": "The Gambia",
+      "category": "Household members enrolled",
+      "value": 12
+    },
+    {
+      "site": "The Gambia",
+      "category": "Human specimens collected",
+      "value": 148
+    },
+    {
+      "site": "The Gambia",
+      "category": "Index-household animals sampled",
+      "value": 5
+    },
+    {
+      "site": "The Gambia",
+      "category": "Index-household animal specimens",
+      "value": 10
+    },
+    {
+      "site": "The Gambia",
+      "category": "Household environmental specimens",
+      "value": 6
+    },
+    {
+      "site": "The Gambia",
+      "category": "Household water specimens",
+      "value": 4
+    },
+    {
+      "site": "The Gambia",
+      "category": "Community animals sampled",
+      "value": 103
+    },
+    {
+      "site": "The Gambia",
+      "category": "Community animal specimens collected",
+      "value": 206
+    }
   ],
   "laboratory": [
-    {"label": "Confirmed human positives", "value": 5, "context": "Current export across enrolled human cohorts"},
-    {"label": "Positive diarrhoea cases", "value": 4, "context": "28 cases enrolled; 5 PCR results pending"},
-    {"label": "Positive community animals", "value": 13, "context": "103 tested · 12.6%"},
-    {"label": "Positive household animals", "value": 1, "context": "5 tested"}
+    {
+      "label": "Confirmed human positives",
+      "value": 5,
+      "context": "Current export across enrolled human cohorts"
+    },
+    {
+      "label": "Positive diarrhoea cases",
+      "value": 4,
+      "context": "28 cases enrolled; 5 PCR results pending"
+    },
+    {
+      "label": "Positive community animals",
+      "value": 13,
+      "context": "103 tested · 12.6%"
+    },
+    {
+      "label": "Positive household animals",
+      "value": 1,
+      "context": "5 tested"
+    }
   ],
   "notes": [
     "Current Gambia site snapshot from the CCC site data report dated 25 September 2026.",
     "Counts are aggregate operational figures and contain no participant-level information.",
     "Sampling and laboratory counts describe different stages of the workflow and should not be summed.",
+    "Progress targets are taken from the published GETCampy study protocol; operational sampling may adapt to field conditions.",
     "The dashboard remains a project snapshot rather than a complete count across every CCC partner site."
   ]
 }
