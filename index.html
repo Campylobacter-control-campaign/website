@@ -10,33 +10,24 @@
     .hero.compact-hero{min-height:auto;padding-top:5rem;padding-bottom:5rem}
     .hero-card{padding:0;overflow:hidden;box-shadow:none}
     .hero-card img{margin:0;border:0;border-radius:1.25rem;width:100%;height:100%;min-height:22rem;object-fit:cover}
-    .home-flow,.snapshot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
-    .home-flow article,.snapshot-card{background:var(--panel);border:1px solid var(--line);border-radius:1rem;padding:1.2rem}
-    .home-flow h3{margin-bottom:.45rem} .home-flow p{margin:0;color:var(--muted)}
+    .home-flow,.snapshot-grid,.home-news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+    .home-flow article,.snapshot-card,.news-card{background:var(--panel);border:1px solid var(--line);border-radius:1rem;padding:1.2rem}
+    .home-flow h3{margin-bottom:.45rem}.home-flow p{margin:0;color:var(--muted)}
     .snapshot-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
     .snapshot-value{display:block;font-size:2.25rem;font-weight:900;line-height:1;letter-spacing:-.05em}
-    .snapshot-label{display:block;font-weight:800;margin-top:.45rem} .snapshot-context{display:block;color:var(--muted);font-size:.86rem}
+    .snapshot-label{display:block;font-weight:800;margin-top:.45rem}.snapshot-context{display:block;color:var(--muted);font-size:.86rem}
     .home-resources{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .support-line{display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
-    .support-line p{margin:0;color:var(--muted)}
+    .news-date{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:850}
+    .news-card h3{margin:.3rem 0 .45rem}.news-card p{color:var(--muted)}
+    .support-line{display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}.support-line p{margin:0;color:var(--muted)}
     @media(max-width:1000px){.snapshot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:880px){.home-flow,.home-resources,.snapshot-grid{grid-template-columns:1fr}.hero-card img{min-height:15rem}}
+    @media(max-width:880px){.home-flow,.home-resources,.snapshot-grid,.home-news{grid-template-columns:1fr}.hero-card img{min-height:15rem}}
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo">
-      <span class="brand-text">Campylobacter Control Campaign</span>
-    </a>
-    <nav class="nav">
-      <a href="index.html">About</a>
-      <a href="science.html">Science</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="profiles.html">People</a>
-      <a href="protocols.html">Protocols</a>
-      <a href="members.html">Members</a>
-    </nav>
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo"><span class="brand-text">Campylobacter Control Campaign</span></a>
+    <nav class="nav"><a href="index.html">About</a><a href="science.html">Science</a><a href="dashboard.html">Dashboard</a><a href="profiles.html">People</a><a href="resources.html">Resources</a><a href="news.html">News</a></nav>
   </header>
   <main id="top">
     <section class="hero compact-hero">
@@ -44,28 +35,19 @@
         <p class="eyebrow">One Health · Genomics · Prevention</p>
         <h1>From pathogen genomes to practical prevention.</h1>
         <p class="lead">CCC brings together field studies, genomics, epidemiology and modelling to understand where <em>Campylobacter</em> transmission comes from — and how to reduce it.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="science.html">Explore the science</a>
-          <a class="button secondary" href="dashboard.html">Project dashboard</a>
-        </div>
+        <div class="hero-actions"><a class="button primary" href="science.html">Explore the science</a><a class="button secondary" href="dashboard.html">Project dashboard</a></div>
       </div>
-      <aside class="hero-card">
-        <img src="assets/photos/workshop-group.jpg" alt="Campylobacter Control Campaign workshop participants">
-      </aside>
+      <aside class="hero-card"><img src="assets/photos/workshop-group.jpg" alt="Campylobacter Control Campaign workshop participants"></aside>
     </section>
 
     <section class="section">
-      <p class="section-kicker">Project snapshot</p>
-      <h2>CCC at a glance</h2>
-      <div id="homepage-snapshot" class="snapshot-grid">
-        <article class="snapshot-card"><span class="snapshot-label">Loading project figures…</span></article>
-      </div>
+      <p class="section-kicker">Project snapshot</p><h2>CCC at a glance</h2>
+      <div id="homepage-snapshot" class="snapshot-grid"><article class="snapshot-card"><span class="snapshot-label">Loading project figures…</span></article></div>
       <p class="small"><a href="dashboard.html">See sampling and genomics workflow details →</a></p>
     </section>
 
     <section class="section muted">
-      <p class="section-kicker">What we do</p>
-      <h2>Follow transmission. Find leverage points.</h2>
+      <p class="section-kicker">What we do</p><h2>Follow transmission. Find leverage points.</h2>
       <div class="home-flow">
         <article><h3>Sample</h3><p>Study people, animals and environments together to identify routes of exposure.</p></article>
         <article><h3>Sequence</h3><p>Use whole-genome and metagenomic data to connect strains, reservoirs and disease.</p></article>
@@ -74,55 +56,36 @@
     </section>
 
     <section class="section photo-strip-section">
-      <div class="home-photo-strip">
-        <img src="assets/photos/lab-practical.jpg" alt="Laboratory practical session">
-        <img src="assets/photos/livestock-sheep.jpg" alt="Livestock sampling setting">
-        <img src="assets/photos/fran-training.jpg" alt="Field sampling training session">
-      </div>
+      <div class="home-photo-strip"><img src="assets/photos/lab-practical.jpg" alt="Laboratory practical session"><img src="assets/photos/livestock-sheep.jpg" alt="Livestock sampling setting"><img src="assets/photos/fran-training.jpg" alt="Field sampling training session"></div>
       <p class="small"><a href="photos.html">Fieldwork, laboratory and training photos →</a></p>
     </section>
 
     <section class="section">
-      <p class="section-kicker">Explore</p>
-      <h2>Resources</h2>
+      <p class="section-kicker">Explore</p><h2>Resources</h2>
       <div class="resource-grid home-resources">
         <a class="resource" href="science.html"><span>Science</span><small>Sampling, genomics, attribution and intervention modelling.</small></a>
         <a class="resource" href="profiles.html"><span>People</span><small>Coordinating investigators and partner expertise.</small></a>
-        <a class="resource" href="protocols.html"><span>Protocols</span><small>GETCampy study, laboratory and sequencing procedures.</small></a>
+        <a class="resource" href="resources.html"><span>Resources</span><small>Public protocols, data and authenticated member materials.</small></a>
         <a class="resource" href="dashboard.html"><span>Dashboard</span><small>Aggregate sampling and genomics workflow figures.</small></a>
         <a class="resource" href="data.html"><span>Data &amp; code</span><small>Public datasets, repositories and analysis resources.</small></a>
-        <a class="resource" href="members.html"><span>Members</span><small>Project documents, CRFs, SOPs and internal resources.</small></a>
+        <a class="resource" href="news.html"><span>News</span><small>Project milestones, publications, training and updates.</small></a>
       </div>
     </section>
 
-    <section class="section funder-strip">
-      <div class="support-line">
-        <div>
-          <p class="section-kicker">Support</p>
-          <p>CCC is supported by Wellcome Trust grant 088786/C/09/Z and builds on GETCampy, MRC MR/V001213/2.</p>
-        </div>
-        <a class="button secondary" href="https://gtr.ukri.org/projects?ref=MR%2FV001213%2F2">GETCampy award</a>
+    <section class="section muted">
+      <p class="section-kicker">Latest</p><h2>News</h2>
+      <div class="home-news">
+        <article class="news-card"><p class="news-date">September 2026</p><h3>Website refresh and dashboard</h3><p>CCC now has a simpler public website and a lightweight aggregate project dashboard.</p><a href="news.html">Read more →</a></article>
+        <article class="news-card"><p class="news-date">June 2026</p><h3>GETCampy protocol published</h3><p>The GETCampy genomic epidemiology and source-attribution protocol is available in <em>BMJ Open</em>.</p><a href="https://bmjopen.bmj.com/content/16/6/e109566.abstract">Read the paper →</a></article>
+        <article class="news-card"><p class="news-date">2026</p><h3>Open laboratory and sequencing methods</h3><p>GETCampy laboratory and sequencing SOPs are available through protocols.io.</p><a href="resources.html">Browse resources →</a></article>
       </div>
     </section>
+
+    <section class="section funder-strip"><div class="support-line"><div><p class="section-kicker">Support</p><p>CCC is supported by Wellcome Trust grant 088786/C/09/Z and builds on GETCampy, MRC MR/V001213/2.</p></div><a class="button secondary" href="https://gtr.ukri.org/projects?ref=MR%2FV001213%2F2">GETCampy award</a></div></section>
   </main>
-  <footer class="site-footer">
-    <p><a href="index.html">Campylobacter Control Campaign</a></p>
-    <p class="small">One Health · Genomics · Prevention</p>
-  </footer>
+  <footer class="site-footer"><p><a href="index.html">Campylobacter Control Campaign</a></p><p class="small">One Health · Genomics · Prevention</p></footer>
   <script>
-  fetch('dashboard.json')
-    .then(function(r){return r.json();})
-    .then(function(data){
-      var el=document.getElementById('homepage-snapshot');
-      el.innerHTML=data.headline.slice(0,4).map(function(x){
-        return '<article class="snapshot-card"><span class="snapshot-value">'+Number(x.value).toLocaleString()+
-          '</span><span class="snapshot-label">'+x.label+'</span><span class="snapshot-context">'+x.context+'</span></article>';
-      }).join('');
-    })
-    .catch(function(){
-      document.getElementById('homepage-snapshot').innerHTML=
-        '<article class="snapshot-card"><span class="snapshot-label"><a href="dashboard.html">Open project dashboard →</a></span></article>';
-    });
+  fetch('dashboard.json').then(function(r){return r.json();}).then(function(data){var el=document.getElementById('homepage-snapshot');el.innerHTML=data.headline.slice(0,4).map(function(x){return '<article class="snapshot-card"><span class="snapshot-value">'+Number(x.value).toLocaleString()+'</span><span class="snapshot-label">'+x.label+'</span><span class="snapshot-context">'+x.context+'</span></article>';}).join('');}).catch(function(){document.getElementById('homepage-snapshot').innerHTML='<article class="snapshot-card"><span class="snapshot-label"><a href="dashboard.html">Open project dashboard →</a></span></article>';});
   </script>
 </body>
 </html>
