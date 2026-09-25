@@ -1,30 +1,35 @@
 {
   "updated": "25 September 2026",
   "headline": [
-    {"label": "Children screened", "value": 1054, "context": "The Gambia"},
-    {"label": "Cases enrolled", "value": 300, "context": "The Gambia"},
-    {"label": "Current sequencing collection", "value": 322, "context": "MRCG-Fajara"},
-    {"label": "Samples prepared for transfer", "value": 206, "context": "Nigeria"}
+    {"label": "Children screened", "value": 53, "context": "The Gambia"},
+    {"label": "Diarrhoea cases enrolled", "value": 28, "context": "The Gambia"},
+    {"label": "Human specimens collected", "value": 148, "context": "Cases, community children and household members"},
+    {"label": "Community animals sampled", "value": 103, "context": "The Gambia"}
   ],
   "sampling": [
-    {"site": "The Gambia", "category": "Cases enrolled", "value": 300},
-    {"site": "The Gambia", "category": "Household", "value": 80},
-    {"site": "The Gambia", "category": "Environmental", "value": 42},
-    {"site": "The Gambia", "category": "Water", "value": 17},
-    {"site": "The Gambia", "category": "Chicken / turkey", "value": 102},
-    {"site": "The Gambia", "category": "Sheep", "value": 58},
-    {"site": "Burkina Faso", "category": "Chicken", "value": 70},
-    {"site": "Ghana", "category": "Animals", "value": 50},
-    {"site": "Nigeria", "category": "Prepared for transfer", "value": 206}
+    {"site": "The Gambia", "category": "Children screened", "value": 53},
+    {"site": "The Gambia", "category": "Eligible children", "value": 41},
+    {"site": "The Gambia", "category": "Diarrhoea cases enrolled", "value": 28},
+    {"site": "The Gambia", "category": "Community children enrolled", "value": 10},
+    {"site": "The Gambia", "category": "Household members enrolled", "value": 12},
+    {"site": "The Gambia", "category": "Human specimens collected", "value": 148},
+    {"site": "The Gambia", "category": "Index-household animals sampled", "value": 5},
+    {"site": "The Gambia", "category": "Index-household animal specimens", "value": 10},
+    {"site": "The Gambia", "category": "Household environmental specimens", "value": 6},
+    {"site": "The Gambia", "category": "Household water specimens", "value": 4},
+    {"site": "The Gambia", "category": "Community animals sampled", "value": 103},
+    {"site": "The Gambia", "category": "Community animal specimens collected", "value": 206}
   ],
-  "genomics": [
-    {"label": "Rectal swabs", "value": 200, "context": "MRCG-Fajara collection"},
-    {"label": "Stool samples", "value": 100, "context": "MRCG-Fajara collection"},
-    {"label": "Isolates", "value": 22, "context": "MRCG-Fajara collection"}
+  "laboratory": [
+    {"label": "Confirmed human positives", "value": 5, "context": "Current export across enrolled human cohorts"},
+    {"label": "Positive diarrhoea cases", "value": 4, "context": "28 cases enrolled; 5 PCR results pending"},
+    {"label": "Positive community animals", "value": 13, "context": "103 tested · 12.6%"},
+    {"label": "Positive household animals", "value": 1, "context": "5 tested"}
   ],
   "notes": [
+    "Current Gambia site snapshot from the CCC site data report dated 25 September 2026.",
     "Counts are aggregate operational figures and contain no participant-level information.",
-    "The dashboard is a project snapshot rather than a complete count across every CCC partner site.",
-    "Sampling, sequencing and transfer counts describe different stages of the workflow and should not be summed."
+    "Sampling and laboratory counts describe different stages of the workflow and should not be summed.",
+    "The dashboard remains a project snapshot rather than a complete count across every CCC partner site."
   ]
 }
