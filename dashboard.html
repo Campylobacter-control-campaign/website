@@ -1,25 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard · Campylobacter Control Campaign</title>
-  <meta name="description" content="Aggregate sampling and laboratory workflow figures for the Campylobacter Control Campaign.">
+  <meta name="description" content="Aggregate recruitment, sampling and laboratory workflow figures for the Campylobacter Control Campaign.">
   <link rel="stylesheet" href="assets/styles.css">
   <style>
     .dashboard-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
-    .metric-card{background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.15rem}
-    .metric-value{display:block;font-size:2.6rem;font-weight:900;line-height:1;letter-spacing:-.055em}
-    .metric-label{display:block;font-weight:850;margin-top:.5rem}
-    .metric-context{display:block;color:var(--muted);font-size:.88rem}
-    .dashboard-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:1rem;overflow:hidden}
-    .dashboard-table th,.dashboard-table td{padding:.75rem .9rem;border-bottom:1px solid var(--line);text-align:left}
-    .dashboard-table th{background:var(--soft)}
-    .dashboard-table td:last-child{font-weight:850;text-align:right}
-    .dashboard-note{color:var(--muted);font-size:.92rem}
-    .laboratory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.25rem}
-    @media(max-width:1000px){.dashboard-grid,.laboratory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:700px){.dashboard-grid,.laboratory-grid{grid-template-columns:1fr}}
+    .metric-card,.progress-card{background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.15rem}
+    .metric-value{display:block;font-size:2.6rem;font-weight:900;line-height:1;letter-spacing:-.055em}.metric-label{display:block;font-weight:850;margin-top:.5rem}.metric-context{display:block;color:var(--muted);font-size:.88rem}
+    .progress-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}.progress-top{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}.progress-top strong{font-size:1.1rem}.progress-number{font-weight:900}.progress-track{height:.7rem;background:var(--soft);border-radius:999px;overflow:hidden;margin:.8rem 0}.progress-fill{height:100%;background:var(--accent);border-radius:999px}.progress-card small{color:var(--muted)}
+    .dashboard-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:1rem;overflow:hidden}.dashboard-table th,.dashboard-table td{padding:.75rem .9rem;border-bottom:1px solid var(--line);text-align:left}.dashboard-table th{background:var(--soft)}.dashboard-table td:last-child{font-weight:850;text-align:right}
+    .dashboard-note{color:var(--muted);font-size:.92rem}.laboratory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.25rem}
+    @media(max-width:1000px){.dashboard-grid,.laboratory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.progress-grid{grid-template-columns:1fr}}
+    @media(max-width:700px){.dashboard-grid,.laboratory-grid{grid-template-columns:1fr}.dashboard-table{font-size:.9rem}}
   </style>
 </head>
 <body>
@@ -28,50 +22,23 @@
     <section class="page-hero"><p class="section-kicker">Project snapshot</p><h1>Dashboard</h1><p class="lead">Aggregate recruitment, sampling and laboratory figures from active CCC sites. No participant-level data are displayed.</p></section>
     <section class="page">
       <p class="small">Last updated: <strong id="updated">—</strong></p>
-
-      <section class="network-block">
-        <p class="section-kicker">The Gambia</p>
-        <h2>Sampling is underway</h2>
-        <p class="wide">Recruitment began at the end of August. The current snapshot tracks enrolment, One Health specimen collection and early laboratory results.</p>
-        <p><a href="news-gambia-sampling.html">Read the field update →</a></p>
-        <div id="headline" class="dashboard-grid"></div>
-      </section>
-
-      <section class="network-block">
-        <p class="section-kicker">Sampling</p>
-        <h2>Current Gambia totals</h2>
-        <table class="dashboard-table">
-          <thead><tr><th>Site</th><th>Sample / activity</th><th>Count</th></tr></thead>
-          <tbody id="sampling-body"></tbody>
-        </table>
-      </section>
-
-      <section class="network-block">
-        <p class="section-kicker">Laboratory</p>
-        <h2>Early results</h2>
-        <p class="wide">These figures reflect completed result forms in the current site export and will change as pending testing is completed.</p>
-        <div id="laboratory" class="laboratory-grid"></div>
-      </section>
-
-      <section class="network-block">
-        <p class="section-kicker">About these numbers</p>
-        <div id="notes"></div>
-      </section>
+      <section class="network-block"><p class="section-kicker">The Gambia</p><h2>Sampling is underway</h2><p class="wide">Recruitment began at the end of August. The current snapshot tracks enrolment, One Health specimen collection and early laboratory results.</p><p><a href="news-gambia-sampling.html">Read the field update →</a></p><div id="headline" class="dashboard-grid"></div></section>
+      <section class="network-block"><p class="section-kicker">Progress</p><h2>Against protocol targets</h2><p class="wide">A simple view of current recruitment and community animal sampling against the published Gambia targets.</p><div id="progress" class="progress-grid"></div><p class="small">Targets: <a href="https://bmjopen.bmj.com/content/16/6/e109566">published GETCampy protocol</a>. Field implementation may adapt as the study progresses.</p></section>
+      <section class="network-block"><p class="section-kicker">Sampling</p><h2>Current Gambia totals</h2><div class="table-scroll"><table class="dashboard-table"><thead><tr><th>Site</th><th>Sample / activity</th><th>Count</th></tr></thead><tbody id="sampling-body"></tbody></table></div></section>
+      <section class="network-block"><p class="section-kicker">Laboratory</p><h2>Early results</h2><p class="wide">These figures reflect completed result forms in the current site export and will change as pending testing is completed.</p><div id="laboratory" class="laboratory-grid"></div></section>
+      <section class="network-block"><p class="section-kicker">About these numbers</p><div id="notes"></div></section>
     </section>
   </main>
   <footer class="site-footer"><p><a href="index.html">Campylobacter Control Campaign</a></p><p class="small">One Health · Genomics · Prevention</p></footer>
   <script>
     function fmt(v){return Number(v).toLocaleString();}
-    fetch('dashboard.json')
-      .then(function(r){if(!r.ok)throw new Error('dashboard data unavailable');return r.json();})
-      .then(function(data){
-        document.getElementById('updated').textContent=data.updated;
-        document.getElementById('headline').innerHTML=data.headline.map(function(x){return '<article class="metric-card"><span class="metric-value">'+fmt(x.value)+'</span><span class="metric-label">'+x.label+'</span><span class="metric-context">'+x.context+'</span></article>';}).join('');
-        document.getElementById('sampling-body').innerHTML=data.sampling.map(function(x){return '<tr><td>'+x.site+'</td><td>'+x.category+'</td><td>'+fmt(x.value)+'</td></tr>';}).join('');
-        document.getElementById('laboratory').innerHTML=data.laboratory.map(function(x){return '<article class="metric-card"><span class="metric-value">'+fmt(x.value)+'</span><span class="metric-label">'+x.label+'</span><span class="metric-context">'+x.context+'</span></article>';}).join('');
-        document.getElementById('notes').innerHTML=data.notes.map(function(x){return '<p class="dashboard-note">'+x+'</p>';}).join('');
-      })
-      .catch(function(){document.getElementById('headline').innerHTML='<div class="notice">Dashboard data could not be loaded.</div>';});
+    fetch('dashboard.json').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{
+      document.getElementById('updated').textContent=data.updated;
+      document.getElementById('headline').innerHTML=data.headline.map(x=>'<article class="metric-card"><span class="metric-value">'+fmt(x.value)+'</span><span class="metric-label">'+x.label+'</span><span class="metric-context">'+x.context+'</span></article>').join('');
+      document.getElementById('progress').innerHTML=data.progress.map(x=>{var pct=Math.min(100,(x.value/x.target)*100);return '<article class="progress-card"><div class="progress-top"><strong>'+x.label+'</strong><span class="progress-number">'+fmt(x.value)+' / '+fmt(x.target)+'</span></div><div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="'+x.target+'" aria-valuenow="'+x.value+'" aria-label="'+x.label+' progress"><div class="progress-fill" style="width:'+pct.toFixed(1)+'%"></div></div><small>'+pct.toFixed(1)+'% · '+x.context+'</small></article>';}).join('');
+      document.getElementById('sampling-body').innerHTML=data.sampling.map(x=>'<tr><td>'+x.site+'</td><td>'+x.category+'</td><td>'+fmt(x.value)+'</td></tr>').join('');
+      document.getElementById('laboratory').innerHTML=data.laboratory.map(x=>'<article class="metric-card"><span class="metric-value">'+fmt(x.value)+'</span><span class="metric-label">'+x.label+'</span><span class="metric-context">'+x.context+'</span></article>').join('');
+      document.getElementById('notes').innerHTML=data.notes.map(x=>'<p class="dashboard-note">'+x+'</p>').join('');
+    }).catch(()=>{document.getElementById('headline').innerHTML='<div class="notice">Dashboard data could not be loaded.</div>';});
   </script>
-</body>
-</html>
+</body></html>

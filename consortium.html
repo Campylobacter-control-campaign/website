@@ -4,203 +4,81 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Consortium · Campylobacter Control Campaign</title>
-  <meta name="description" content="The Campylobacter Control Campaign consortium and partner network.">
-  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <meta name="description" content="Countries, partner sites and members of the Campylobacter Control Campaign consortium.">
+  <script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    .coordination-team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .profile-card{display:flex;flex-direction:column;box-shadow:none;border-radius:.9rem;padding:1.05rem}
-    .profile-card h3{margin-bottom:.3rem}
-    .profile-role{margin:.1rem 0 .55rem;color:var(--accent);font-size:.86rem;font-weight:800}
-    .profile-bio{margin:.15rem 0 .8rem;color:var(--muted);font-size:.93rem;line-height:1.45}
-    .profile-chip{margin-top:auto;align-self:flex-start}
-    .compact-members{margin:2rem 0}
-    .compact-members h3{margin-bottom:.75rem}
-    .member-name-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}
-    .member-name{display:block;background:#fff;border:1px solid var(--line);border-radius:.75rem;padding:.55rem .7rem;font-size:.92rem}
-    @media(max-width:1000px){.coordination-team-grid,.member-name-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:650px){.coordination-team-grid,.member-name-grid{grid-template-columns:1fr}}
+    .consortium-intro{display:flex;justify-content:space-between;gap:1.5rem;align-items:end;flex-wrap:wrap}
+    .partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+    .partner-card{background:#fff;border:1px solid var(--line);border-radius:1.15rem;padding:1.1rem}
+    .partner-card h3{margin-bottom:.35rem}.partner-site{color:var(--muted);margin:.25rem 0 .75rem}
+    .partner-card details{border-top:1px solid var(--line);padding-top:.7rem;margin-top:.7rem}
+    .partner-card summary{cursor:pointer;font-weight:800;color:var(--accent)}
+    .partner-members{margin:.7rem 0 0;color:var(--muted);font-size:.92rem}
+    @media(max-width:760px){.partner-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo">
-      <span class="brand-text">Campylobacter Control Campaign</span>
-    </a>
-    <nav class="nav">
-      <a href="index.html#about">About</a>
-      <a href="science.html">Science</a>
-      <a href="members.html">For members</a>
-      <a href="protocols.html">Protocols</a>
-      <a href="consortium.html">Consortium</a>
-      <a href="phd.html">PhD programme</a>
-    </nav>
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo"><span class="brand-text">Campylobacter Control Campaign</span></a>
+    <nav class="nav"><a href="science.html">Science</a><a href="dashboard.html">Dashboard</a><a href="profiles.html">People</a><a href="resources.html">Resources</a><a href="news.html">News</a><a href="contact.html">Contact</a></nav>
   </header>
-
   <main>
     <section class="page-hero">
-      <p class="section-kicker">People</p>
+      <p class="section-kicker">Network</p>
       <h1>Consortium</h1>
-      <p class="lead">A One Health network linking field studies, microbiology, genomics, epidemiology and intervention design.</p>
+      <p class="lead">A One Health network linking field studies, microbiology, genomics, epidemiology and intervention design across partner countries.</p>
     </section>
-
     <section class="page">
-      <section class="network-block">
-        <p class="section-kicker">Coordination</p>
-        <h2>Coordinating investigators</h2>
-        <div class="profile-grid coordination-team-grid">
-
-        <article class="profile-card"><h3>Samuel K. Sheppard</h3><p class="profile-role">University of Oxford · Principal investigator</p><p class="profile-bio">Microbial genomics, pathogen evolution and antimicrobial resistance.</p><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/samuel-sheppard">Profile ↗</a></article>
-        <article class="profile-card"><h3>Ben Pascoe</h3><p class="profile-role">University of Oxford · Pathogen genomics</p><p class="profile-bio"><em>Campylobacter</em> evolution, transmission, AMR and genomic surveillance.</p><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/ben-pascoe">Profile ↗</a></article>
-        <article class="profile-card"><h3>Frances M. Colles</h3><p class="profile-role">University of Oxford · One Health</p><p class="profile-bio"><em>Campylobacter</em> ecology, poultry colonisation and One Health control.</p><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/frances-colles">Profile ↗</a></article>
-        <article class="profile-card"><h3>Kanny Diallo</h3><p class="profile-role">CSRS, Côte d’Ivoire · Molecular epidemiology</p><p class="profile-bio">Bacterial meningitis, genomics and infectious-disease surveillance.</p><a class="profile-chip" href="https://www.vacamr.org/kanny-diallo">Profile ↗</a></article>
-        <article class="profile-card"><h3>Ozan Gundogdu</h3><p class="profile-role">LSHTM · Enteric microbiology</p><p class="profile-bio"><em>Campylobacter</em> physiology, pathogenesis and intervention research.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/gundogdu.ozan">Profile ↗</a></article>
-        <article class="profile-card"><h3>Mohammad Jahangir Hossain</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Clinical epidemiology</p><p class="profile-bio">Diarrhoeal disease, surveillance, outbreak investigation and vaccines.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/hossain.mohammad-jahangir">Profile ↗</a></article>
-        <article class="profile-card"><h3>Martin Antonio</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Molecular microbiology</p><p class="profile-bio">Molecular diagnostics, surveillance, outbreaks and antimicrobial resistance.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/antonio.martin">Profile ↗</a></article>
-        <article class="profile-card"><h3>Abdul Karim Sesay</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Genomics</p><p class="profile-bio">Sequencing capacity and public-health genomics in West Africa.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/sesay.abdul">Profile ↗</a></article>
-        <article class="profile-card"><h3>Stella Ifeanyi Smith</h3><p class="profile-role">Nigeria · Molecular epidemiology &amp; AMR</p><p class="profile-bio">Molecular epidemiology, antimicrobial resistance and microbiomes.</p><a class="profile-chip" href="https://www.vacamr.org/stella-ifeanyi-smith">Profile ↗</a></article>
-        <article class="profile-card"><h3>Brendan W. Wren</h3><p class="profile-role">LSHTM · Microbial pathogenesis &amp; vaccines</p><p class="profile-bio">Bacterial pathogenesis, genomics, glycoengineering and vaccines.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/wren.brendan">Profile ↗</a></article>
-
-        </div>
+      <section class="network-block consortium-intro">
+        <div><p class="section-kicker">People</p><h2>One network, locally led</h2><p class="wide">CCC brings together country and site investigators with specialists in laboratory science, genomics, epidemiology, modelling and implementation.</p></div>
+        <p><a class="button secondary" href="profiles.html">Coordinating investigators</a></p>
       </section>
 
       <section class="network-block">
-        <p class="section-kicker">Network</p>
+        <p class="section-kicker">Where we work</p>
         <h2>Countries and partner sites</h2>
         <div class="plotly-map-card">
           <div id="ccc-map" class="plotly-map" aria-label="Map of CCC participating countries"></div>
-          <p class="map-caption">Markers show partner institutions or study locations at approximate city level.</p>
+          <p class="map-caption">Markers show partner institutions or study locations at approximate city level. The network continues to evolve.</p>
         </div>
       </section>
 
-      <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var markers = [
-          {"country":"Bangladesh","lat":24.75,"lon":90.4,"site":"Bangladesh Agricultural University, Mymensingh"},
-          {"country":"Benin","lat":6.42,"lon":2.34,"site":"University of Abomey-Calavi"},
-          {"country":"Burkina Faso","lat":12.37,"lon":-1.53,"site":"Ouagadougou partner institutions"},
-          {"country":"Cameroon","lat":5.45,"lon":10.06,"site":"University of Dschang"},
-          {"country":"Colombia","lat":4.7,"lon":-74.21,"site":"AGROSAVIA, Mosquera"},
-          {"country":"Côte d’Ivoire","lat":5.35,"lon":-4.01,"site":"Centre Suisse de Recherches Scientifiques en Côte d’Ivoire"},
-          {"country":"Egypt","lat":30.02,"lon":31.5,"site":"Zewail City of Science and Technology"},
-          {"country":"Ethiopia","lat":11.59,"lon":37.39,"site":"Bahir Dar University"},
-          {"country":"Ghana","lat":9.4,"lon":-0.84,"site":"University for Development Studies, Tamale"},
-          {"country":"Ghana","lat":6.67,"lon":-1.57,"site":"KCCR / KNUST, Kumasi"},
-          {"country":"India","lat":12.97,"lon":77.59,"site":"Kempegowda Institute of Medical Sciences, Bengaluru"},
-          {"country":"Malawi","lat":-15.79,"lon":35.0,"site":"Kamuzu University of Health Sciences"},
-          {"country":"Mali","lat":12.64,"lon":-8.0,"site":"Centre d’Infectiologie Charles Mérieux-Mali"},
-          {"country":"Mozambique","lat":-25.4,"lon":32.81,"site":"Centro de Investigação em Saúde de Manhiça / CHAMPS Network"},
-          {"country":"Nigeria","lat":6.52,"lon":3.38,"site":"University of Lagos / Nigerian Institute of Medical Research"},
-          {"country":"Nigeria","lat":6.86,"lon":3.45,"site":"Mountain Top University"},
-          {"country":"Thailand","lat":18.79,"lon":98.98,"site":"Chiang Mai University"},
-          {"country":"Thailand","lat":7.01,"lon":100.5,"site":"Prince of Songkla University"},
-          {"country":"The Gambia","lat":13.46,"lon":-16.68,"site":"MRC Unit The Gambia at LSHTM, Banjul"},
-          {"country":"The Gambia","lat":13.31,"lon":-14.22,"site":"Upper River Region / DLS / NARI"},
-          {"country":"United Kingdom","lat":51.75,"lon":-1.25,"site":"University of Oxford / IOI"},
-          {"country":"United Kingdom","lat":51.62,"lon":-3.94,"site":"Swansea University"},
-          {"country":"United Kingdom","lat":51.52,"lon":-0.13,"site":"London School of Hygiene & Tropical Medicine"}
-        ];
-        var el = document.getElementById("ccc-map");
-        if (!el || !window.Plotly) return;
-        var trace = {
-          type:"scattergeo",
-          mode:"markers+text",
-          lon:markers.map(function(m){return m.lon;}),
-          lat:markers.map(function(m){return m.lat;}),
-          text:markers.map(function(m){return m.country;}),
-          hovertext:markers.map(function(m){return "<b>"+m.country+"</b><br>"+m.site;}),
-          hoverinfo:"text",
-          textposition:"top center",
-          marker:{size:10,color:"#006c5b",line:{color:"#ffffff",width:2}}
-        };
-        var layout = {
-          margin:{l:0,r:0,t:0,b:0},
-          paper_bgcolor:"#ffffff",
-          geo:{
-            projection:{type:"natural earth"},
-            showland:true,landcolor:"#dcebe4",
-            showocean:true,oceancolor:"#f8fbf8",
-            showcountries:true,countrycolor:"#ffffff",
-            showframe:false,showcoastlines:true,coastlinecolor:"#bfd5cb",
-            lataxis:{range:[-40,65]},
-            lonaxis:{range:[-90,115]}
-          }
-        };
-        Plotly.newPlot(el,[trace],layout,{displayModeBar:false,responsive:true});
-      });
-      </script>
-
       <section class="network-block">
-        <p class="section-kicker">Members</p>
-        <h2>Consortium members</h2>
-        <section class="member-country compact-members">
-  <h3>Bangladesh</h3>
-  <div class="member-name-grid"><span class="member-name">Md. Tanvir Rahman</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Benin</h3>
-  <div class="member-name-grid"><span class="member-name">Victorien Dougnon</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Burkina Faso</h3>
-  <div class="member-name-grid"><span class="member-name">Evariste Bako</span><span class="member-name">Isidore JO Bonkoungou</span><span class="member-name">Modeste T Gampene</span><span class="member-name">Marguerite Edith Malatala Nikiema</span><span class="member-name">Barthélemy S Zoma</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Cameroon</h3>
-  <div class="member-name-grid"><span class="member-name">Doriane Esther Djeussi</span><span class="member-name">Jaures Arnaud Kenfack Noumedem</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Côte d’Ivoire</h3>
-  <div class="member-name-grid"><span class="member-name">Doua Alexis Blé</span><span class="member-name">Bassirou Bonfoh</span><span class="member-name">Kanny Diallo</span><span class="member-name">Amelan Marie-Flore Didia</span><span class="member-name">Siaka Koné</span><span class="member-name">Bognan Valentin Koné</span><span class="member-name">Kouassi Firmin Missa</span><span class="member-name">Sylvain Gnamien Traoré</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Ethiopia</h3>
-  <div class="member-name-grid"><span class="member-name">Wondemagegn Mulu Lingerew</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Ghana</h3>
-  <div class="member-name-grid"><span class="member-name">Samuel Addo</span><span class="member-name">Akosua Bonsu Karikari</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Malawi</h3>
-  <div class="member-name-grid"><span class="member-name">Chisomo L Msefula</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Mali</h3>
-  <div class="member-name-grid"><span class="member-name">Bourema Kouriba</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Mozambique</h3>
-  <div class="member-name-grid"><span class="member-name">Inacio Mandomando</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Nigeria</h3>
-  <div class="member-name-grid"><span class="member-name">Daniel Adesanya</span><span class="member-name">Abraham Ajayi</span><span class="member-name">Utibeima Udo Essiet</span><span class="member-name">Bamidele Moses</span><span class="member-name">Ayokunle Omileye</span><span class="member-name">Stella Ifeanyi Smith</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>Thailand</h3>
-  <div class="member-name-grid"><span class="member-name">Prapas Patchanee</span><span class="member-name">Teerarat Prasertsee</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>The Gambia</h3>
-  <div class="member-name-grid"><span class="member-name">Martin Antonio</span><span class="member-name">Sessinou Benoit Assogba</span><span class="member-name">Henry Badji</span><span class="member-name">Ousman E Bah</span><span class="member-name">Samba Bah</span><span class="member-name">Eustacia Jane Cassell</span><span class="member-name">Bubacarr E Ceesay</span><span class="member-name">Abdou Ceesay</span><span class="member-name">Bakary Conteh</span><span class="member-name">Lamin Drammeh</span><span class="member-name">Binta Faye</span><span class="member-name">Ebrima Fofana</span><span class="member-name">Modou Gaye</span><span class="member-name">Mohammad Jahangir Hossain</span><span class="member-name">Samba Juma Jallow</span><span class="member-name">Mamud Jallow</span><span class="member-name">Demba B Jallow</span><span class="member-name">Modou B Jarju</span><span class="member-name">Pa Modou Joof</span><span class="member-name">Fatou Mbye</span><span class="member-name">Md Rafiquzzaman</span><span class="member-name">Dodou Sanyang</span><span class="member-name">Abdul Karim Sesay</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>United Kingdom</h3>
-  <div class="member-name-grid"><span class="member-name">Alex Caswell</span><span class="member-name">Frances M. Colles</span><span class="member-name">Andrew Farlow</span><span class="member-name">Ozan Gundogdu</span><span class="member-name">Matthew D Hitchings</span><span class="member-name">Ben Pascoe</span><span class="member-name">Samuel K. Sheppard</span><span class="member-name">Brendan W. Wren</span></div>
-</section>
-<section class="member-country compact-members">
-  <h3>India</h3>
-  <div class="member-name-grid"><span class="member-name">Geetha Nagaraj</span></div>
-</section>
+        <p class="section-kicker">Partners</p>
+        <h2>Consortium by country</h2>
+        <p class="wide">Partner sites and named consortium members currently represented on the CCC website.</p>
+        <div class="partner-grid">
+          <article class="partner-card"><h3>Bangladesh</h3><p class="partner-site">Bangladesh Agricultural University, Mymensingh</p><details><summary>View member</summary><p class="partner-members">Md. Tanvir Rahman</p></details></article>
+          <article class="partner-card"><h3>Benin</h3><p class="partner-site">University of Abomey-Calavi</p><details><summary>View member</summary><p class="partner-members">Victorien Dougnon</p></details></article>
+          <article class="partner-card"><h3>Burkina Faso</h3><p class="partner-site">Ouagadougou and partner study sites</p><details><summary>View members</summary><p class="partner-members">Evariste Bako · Isidore JO Bonkoungou · Modeste T Gampene · Marguerite Edith Malatala Nikiema · Barthélemy S Zoma</p></details></article>
+          <article class="partner-card"><h3>Cameroon</h3><p class="partner-site">University of Dschang</p><details><summary>View members</summary><p class="partner-members">Doriane Esther Djeussi · Jaures Arnaud Kenfack Noumedem</p></details></article>
+          <article class="partner-card"><h3>Colombia</h3><p class="partner-site">AGROSAVIA, Mosquera</p></article>
+          <article class="partner-card"><h3>Côte d’Ivoire</h3><p class="partner-site">Centre Suisse de Recherches Scientifiques en Côte d’Ivoire</p><details><summary>View members</summary><p class="partner-members">Doua Alexis Blé · Bassirou Bonfoh · Kanny Diallo · Amelan Marie-Flore Didia · Siaka Koné · Bognan Valentin Koné · Kouassi Firmin Missa · Sylvain Gnamien Traoré</p></details></article>
+          <article class="partner-card"><h3>Egypt</h3><p class="partner-site">Zewail City of Science and Technology</p></article>
+          <article class="partner-card"><h3>Ethiopia</h3><p class="partner-site">Bahir Dar University</p><details><summary>View member</summary><p class="partner-members">Wondemagegn Mulu Lingerew</p></details></article>
+          <article class="partner-card"><h3>Ghana</h3><p class="partner-site">University for Development Studies, Tamale · KCCR / KNUST, Kumasi</p><details><summary>View members</summary><p class="partner-members">Samuel Addo · Akosua Bonsu Karikari</p></details></article>
+          <article class="partner-card"><h3>India</h3><p class="partner-site">Kempegowda Institute of Medical Sciences, Bengaluru</p><details><summary>View member</summary><p class="partner-members">Geetha Nagaraj</p></details></article>
+          <article class="partner-card"><h3>Malawi</h3><p class="partner-site">Kamuzu University of Health Sciences</p><details><summary>View member</summary><p class="partner-members">Chisomo L Msefula</p></details></article>
+          <article class="partner-card"><h3>Mali</h3><p class="partner-site">Centre d’Infectiologie Charles Mérieux-Mali</p><details><summary>View member</summary><p class="partner-members">Bourema Kouriba</p></details></article>
+          <article class="partner-card"><h3>Mozambique</h3><p class="partner-site">Centro de Investigação em Saúde de Manhiça / CHAMPS Network</p><details><summary>View member</summary><p class="partner-members">Inacio Mandomando</p></details></article>
+          <article class="partner-card"><h3>Nigeria</h3><p class="partner-site">University of Lagos / Nigerian Institute of Medical Research · Mountain Top University</p><details><summary>View members</summary><p class="partner-members">Daniel Adesanya · Abraham Ajayi · Utibeima Udo Essiet · Bamidele Moses · Ayokunle Omileye · Stella Ifeanyi Smith</p></details></article>
+          <article class="partner-card"><h3>Thailand</h3><p class="partner-site">Chiang Mai University · Prince of Songkla University</p><details><summary>View members</summary><p class="partner-members">Prapas Patchanee · Teerarat Prasertsee</p></details></article>
+          <article class="partner-card"><h3>The Gambia</h3><p class="partner-site">MRC Unit The Gambia at LSHTM · Upper River Region · DLS / NARI</p><details><summary>View members</summary><p class="partner-members">Martin Antonio · Sessinou Benoit Assogba · Henry Badji · Ousman E Bah · Samba Bah · Eustacia Jane Cassell · Bubacarr E Ceesay · Abdou Ceesay · Bakary Conteh · Lamin Drammeh · Binta Faye · Ebrima Fofana · Modou Gaye · Mohammad Jahangir Hossain · Samba Juma Jallow · Mamud Jallow · Demba B Jallow · Modou B Jarju · Pa Modou Joof · Fatou Mbye · Md Rafiquzzaman · Dodou Sanyang · Abdul Karim Sesay</p></details></article>
+          <article class="partner-card"><h3>United Kingdom</h3><p class="partner-site">University of Oxford / IOI · Swansea University · London School of Hygiene &amp; Tropical Medicine</p><details><summary>View members</summary><p class="partner-members">Alex Caswell · Frances M. Colles · Andrew Farlow · Ozan Gundogdu · Matthew D Hitchings · Ben Pascoe · Samuel K. Sheppard · Brendan W. Wren</p></details></article>
+        </div>
       </section>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p><a href="index.html">Campylobacter Control Campaign</a></p>
-    <p class="small">Supported by Wellcome Trust grant 088786/C/09/Z; building on GETCampy, MRC MR/V001213/2.</p>
-  </footer>
+  <footer class="site-footer"><p><a href="index.html">Campylobacter Control Campaign</a></p><p class="small">One Health · Genomics · Prevention</p></footer>
+  <script>
+  document.addEventListener("DOMContentLoaded",function(){
+    var markers=[
+      ["Bangladesh",24.75,90.4,"Bangladesh Agricultural University, Mymensingh"],["Benin",6.42,2.34,"University of Abomey-Calavi"],["Burkina Faso",12.37,-1.53,"Ouagadougou partner institutions"],["Cameroon",5.45,10.06,"University of Dschang"],["Colombia",4.7,-74.21,"AGROSAVIA, Mosquera"],["Côte d’Ivoire",5.35,-4.01,"CSRS"],["Egypt",30.02,31.5,"Zewail City of Science and Technology"],["Ethiopia",11.59,37.39,"Bahir Dar University"],["Ghana",9.4,-0.84,"University for Development Studies, Tamale"],["Ghana",6.67,-1.57,"KCCR / KNUST, Kumasi"],["India",12.97,77.59,"Kempegowda Institute of Medical Sciences"],["Malawi",-15.79,35.0,"Kamuzu University of Health Sciences"],["Mali",12.64,-8.0,"Centre d’Infectiologie Charles Mérieux-Mali"],["Mozambique",-25.4,32.81,"CISM / CHAMPS Network"],["Nigeria",6.52,3.38,"University of Lagos / NIMR"],["Nigeria",6.86,3.45,"Mountain Top University"],["Thailand",18.79,98.98,"Chiang Mai University"],["Thailand",7.01,100.5,"Prince of Songkla University"],["The Gambia",13.46,-16.68,"MRC Unit The Gambia at LSHTM"],["The Gambia",13.31,-14.22,"Upper River Region / DLS / NARI"],["United Kingdom",51.75,-1.25,"University of Oxford / IOI"],["United Kingdom",51.62,-3.94,"Swansea University"],["United Kingdom",51.52,-0.13,"London School of Hygiene & Tropical Medicine"]
+    ];
+    var el=document.getElementById("ccc-map"); if(!el||!window.Plotly)return;
+    Plotly.newPlot(el,[{type:"scattergeo",mode:"markers",lon:markers.map(m=>m[2]),lat:markers.map(m=>m[1]),hovertext:markers.map(m=>"<b>"+m[0]+"</b><br>"+m[3]),hoverinfo:"text",marker:{size:10,color:"#006c5b",line:{color:"#fff",width:2}}}],{margin:{l:0,r:0,t:0,b:0},paper_bgcolor:"#fff",geo:{projection:{type:"natural earth"},showland:true,landcolor:"#dcebe4",showocean:true,oceancolor:"#f8fbf8",showcountries:true,countrycolor:"#fff",showframe:false,showcoastlines:true,coastlinecolor:"#bfd5cb",lataxis:{range:[-40,65]},lonaxis:{range:[-90,115]}}},{displayModeBar:false,responsive:true});
+  });
+  </script>
 </body>
 </html>
