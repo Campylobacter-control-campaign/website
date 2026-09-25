@@ -11,45 +11,36 @@
     .profile-card{display:flex;flex-direction:column;box-shadow:none;border-radius:.9rem;padding:1.05rem}
     .profile-card h3{margin-bottom:.3rem}.profile-role{margin:.1rem 0 .65rem;color:var(--accent);font-size:.88rem;font-weight:800}
     .profile-bio{margin:.25rem 0 .9rem;color:var(--muted);font-size:.96rem;line-height:1.5}
-    .profile-chip{margin-top:auto;align-self:flex-start}
+    .profile-links{margin-top:auto;display:flex;gap:.45rem;flex-wrap:wrap}
     @media(max-width:1000px){.coordination-team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:650px){.coordination-team-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo">
-      <span class="brand-text">Campylobacter Control Campaign</span>
-    </a>
-    <nav class="nav">
-      <a href="index.html">About</a>
-      <a href="science.html">Science</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="profiles.html">People</a>
-      <a href="resources.html">Resources</a>
-      <a href="news.html">News</a>
-    </nav>
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo"><span class="brand-text">Campylobacter Control Campaign</span></a>
+    <nav class="nav"><a href="science.html">Science</a><a href="dashboard.html">Dashboard</a><a href="profiles.html">People</a><a href="resources.html">Resources</a><a href="news.html">News</a><a href="contact.html">Contact</a></nav>
   </header>
   <main>
     <section class="page-hero">
       <p class="section-kicker">People</p>
       <h1>Coordinating investigators</h1>
-      <p class="lead">Sam Sheppard leads CCC, with coordination spanning genomics, epidemiology, microbiology, sequencing and One Health.</p>
+      <p class="lead">Sam Sheppard leads CCC, with coordination spanning genomics, epidemiology, microbiology, sequencing, economics and One Health.</p>
     </section>
     <section class="page">
       <div class="profile-grid coordination-team-grid">
-        <article class="profile-card"><h3>Samuel K. Sheppard</h3><p class="profile-role">University of Oxford · Principal investigator</p><p class="profile-bio">Microbial genomicist studying pathogen evolution, host adaptation, transmission and antimicrobial resistance.</p><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/samuel-sheppard">Profile ↗</a></article>
-        <article class="profile-card"><h3>Martin Antonio</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Molecular microbiology</p><p class="profile-bio">Uses molecular technologies for infectious-disease diagnosis, outbreak investigation, surveillance and antimicrobial-resistance research.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/antonio.martin">Profile ↗</a></article>
-        <article class="profile-card"><h3>Frances M. Colles</h3><p class="profile-role">University of Oxford · One Health</p><p class="profile-bio"><em>Campylobacter</em> researcher studying host ecology, poultry colonisation and One Health approaches to reducing transmission.</p><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/frances-colles">Profile ↗</a></article>
-        <article class="profile-card"><h3>Kanny Diallo</h3><p class="profile-role">CSRS, Côte d’Ivoire · Molecular epidemiology</p><p class="profile-bio">Molecular epidemiologist working on bacterial meningitis, genomics and infectious-disease surveillance in West Africa.</p><a class="profile-chip" href="https://www.vacamr.org/kanny-diallo">Profile ↗</a></article>
-        <article class="profile-card"><h3>Ozan Gundogdu</h3><p class="profile-role">LSHTM · Enteric microbiology</p><p class="profile-bio">Microbiologist studying <em>Campylobacter</em> physiology, pathogenesis and control using molecular and omics approaches.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/gundogdu.ozan">Profile ↗</a></article>
-        <article class="profile-card"><h3>Matthew Hitchings</h3><p class="profile-role">Swansea University Medical School · Genomics &amp; sequencing</p><p class="profile-bio">Microbial genomicist using high-throughput sequencing, comparative genomics and bioinformatics to study microorganisms.</p><a class="profile-chip" href="https://www.swansea.ac.uk/staff/m.hitchings/">Profile ↗</a></article>
-        <article class="profile-card"><h3>Mohammad Jahangir Hossain</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Clinical epidemiology</p><p class="profile-bio">Clinical epidemiologist focused on diarrhoeal disease, infectious-disease surveillance, outbreak investigation and vaccines.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/hossain.mohammad-jahangir">Profile ↗</a></article>
-        <article class="profile-card"><h3>Ben Pascoe</h3><p class="profile-role">University of Oxford · Pathogen genomics</p><p class="profile-bio"><em>Campylobacter</em> genomicist studying evolution, transmission and antimicrobial resistance for surveillance and control.</p><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/ben-pascoe">Profile ↗</a></article>
-        <article class="profile-card"><h3>Abdul Karim Sesay</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Genomics</p><p class="profile-bio">Genomics specialist building sequencing capacity and public-health genomics in The Gambia and across West Africa.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/sesay.abdul">Profile ↗</a></article>
-        <article class="profile-card"><h3>Stella Ifeanyi Smith</h3><p class="profile-role">Nigeria · Molecular epidemiology &amp; AMR</p><p class="profile-bio">Medical microbiologist specialising in molecular epidemiology, antimicrobial resistance and infectious-disease microbiomes.</p><a class="profile-chip" href="https://www.vacamr.org/stella-ifeanyi-smith">Profile ↗</a></article>
-        <article class="profile-card"><h3>Brendan W. Wren</h3><p class="profile-role">LSHTM · Microbial pathogenesis &amp; vaccines</p><p class="profile-bio">Studies bacterial pathogenesis, genome biology and glycoengineering, including development of glycoconjugate vaccines.</p><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/wren.brendan">Profile ↗</a></article>
+        <article class="profile-card"><h3>Samuel K. Sheppard</h3><p class="profile-role">University of Oxford · Principal investigator</p><p class="profile-bio">Microbial genomicist studying pathogen evolution, host adaptation, transmission and antimicrobial resistance.</p><div class="profile-links"><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/samuel-sheppard">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Martin Antonio</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Molecular microbiology</p><p class="profile-bio">Uses molecular technologies for infectious-disease diagnosis, outbreak investigation, surveillance and antimicrobial-resistance research.</p><div class="profile-links"><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/antonio.martin">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Frances M. Colles</h3><p class="profile-role">University of Oxford · One Health</p><p class="profile-bio"><em>Campylobacter</em> researcher studying host ecology, poultry colonisation and One Health approaches to reducing transmission.</p><div class="profile-links"><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/frances-colles">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Kanny Diallo</h3><p class="profile-role">CSRS, Côte d’Ivoire · Molecular epidemiology</p><p class="profile-bio">Molecular epidemiologist working on bacterial meningitis, genomics and infectious-disease surveillance in West Africa.</p><div class="profile-links"><a class="profile-chip" href="https://www.vacamr.org/kanny-diallo">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Andrew Farlow</h3><p class="profile-role">University of Oxford · Global health economics</p><p class="profile-bio">Economist working across global health policy, antimicrobial resistance, vaccines, epidemic preparedness and evidence-based intervention design.</p><div class="profile-links"><a class="profile-chip" href="https://www.economics.ox.ac.uk/people/andrew-farlow-0">Oxford ↗</a><a class="profile-chip" href="https://www.andrewfarlow.com/">Personal site ↗</a></div></article>
+        <article class="profile-card"><h3>Ozan Gundogdu</h3><p class="profile-role">LSHTM · Enteric microbiology</p><p class="profile-bio">Microbiologist studying <em>Campylobacter</em> physiology, pathogenesis and control using molecular and omics approaches.</p><div class="profile-links"><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/gundogdu.ozan">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Matthew Hitchings</h3><p class="profile-role">Swansea University Medical School · Genomics &amp; sequencing</p><p class="profile-bio">Microbial genomicist using high-throughput sequencing, comparative genomics and bioinformatics to study microorganisms.</p><div class="profile-links"><a class="profile-chip" href="https://www.swansea.ac.uk/staff/m.hitchings/">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Mohammad Jahangir Hossain</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Clinical epidemiology</p><p class="profile-bio">Clinical epidemiologist focused on diarrhoeal disease, infectious-disease surveillance, outbreak investigation and vaccines.</p><div class="profile-links"><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/hossain.mohammad-jahangir">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Ben Pascoe</h3><p class="profile-role">University of Oxford · Pathogen genomics</p><p class="profile-bio"><em>Campylobacter</em> genomicist studying evolution, transmission and antimicrobial resistance for surveillance and control.</p><div class="profile-links"><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/ben-pascoe">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Abdul Karim Sesay</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Genomics</p><p class="profile-bio">Genomics specialist building sequencing capacity and public-health genomics in The Gambia and across West Africa.</p><div class="profile-links"><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/sesay.abdul">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Stella Ifeanyi Smith</h3><p class="profile-role">Nigeria · Molecular epidemiology &amp; AMR</p><p class="profile-bio">Medical microbiologist specialising in molecular epidemiology, antimicrobial resistance and infectious-disease microbiomes.</p><div class="profile-links"><a class="profile-chip" href="https://www.vacamr.org/stella-ifeanyi-smith">Profile ↗</a></div></article>
+        <article class="profile-card"><h3>Brendan W. Wren</h3><p class="profile-role">LSHTM · Microbial pathogenesis &amp; vaccines</p><p class="profile-bio">Studies bacterial pathogenesis, genome biology and glycoengineering, including development of glycoconjugate vaccines.</p><div class="profile-links"><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/wren.brendan">Profile ↗</a></div></article>
       </div>
       <p class="small" style="margin-top:2rem"><a href="consortium.html">View the wider CCC consortium →</a></p>
     </section>
