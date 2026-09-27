@@ -17,7 +17,7 @@ Configure these repository Actions secrets:
 - `CCC_DASHBOARD_FEED_URL` — HTTPS endpoint returning JSON in the same structure as `dashboard.json`.
 - `CCC_DASHBOARD_FEED_TOKEN` — optional bearer token if the aggregate endpoint requires authentication.
 
-The workflow runs daily at 06:17 UTC and can also be run manually.
+The workflow checks for updates **fortnightly after the CCC Programme meeting**. It is scheduled for Friday evening and gated to the odd ISO weeks anchored on the 25 September 2026 programme meeting (week 39), so the next scheduled checks are 9 October, 23 October, and so on. It can also be run manually at any time.
 
 ## Recommended upstream patterns
 
@@ -35,4 +35,4 @@ Official API documentation: https://docs.surveycto.com/05-exporting-and-publishi
 
 ## Adding sites
 
-The front end currently shows The Gambia as the active site. When another site's approved aggregate feed is available, extend the JSON contract to a `sites` object or create one aggregate JSON file per site, then enable the corresponding dashboard tab.
+The front end currently shows The Gambia as the active site and carries a `site_status` registry for the wider programme. Nigeria and Côte d’Ivoire are marked as preparing so the interface is ready for their first approved aggregate reports. Once sampling starts, the next schema step is to store the same aggregate dashboard blocks per site and make those tabs interactive. Burkina Faso and Ghana remain inactive until the programme decides which aggregate data stream should populate them.
