@@ -82,7 +82,17 @@ function renderProgramme(){
  document.querySelectorAll('[data-open-site]').forEach(b=>b.addEventListener('click',()=>selectView(b.dataset.openSite)));
 }
 function renderSite(id){
- const site=dashboard.sites[id]; if(!site||!site.data){renderProgramme();return}
+ const site=dashboard.sites[id]; if(!site){renderProgramme();return}
+ if(!site.data){
+   document.getElementById('programme-overview').hidden=false;document.getElementById('site-detail').hidden=true;
+   document.getElementById('dashboard-title').textContent='Field dashboard: '+site.label;
+   document.getElementById('dashboard-lead').textContent=site.note+'.';
+   document.getElementById('updated').textContent='Not yet reporting';
+   document.getElementById('source').textContent='Aggregate feed pending';
+   document.getElementById('programme-summary').innerHTML='<article class="programme-kpi" style="grid-column:1/-1"><strong>Coming soon</strong><b>'+site.label+'</b><span>Approved aggregate recruitment, sampling and laboratory figures will appear here after the first site report.</span></article>';
+   document.getElementById('site-status-grid').innerHTML='';
+   return;
+ }
  const d=site.data;document.getElementById('programme-overview').hidden=true;document.getElementById('site-detail').hidden=false;
  document.getElementById('dashboard-title').textContent='Field dashboard: '+site.label;
  document.getElementById('dashboard-lead').textContent='Progress towards study targets and key sampling results.';
