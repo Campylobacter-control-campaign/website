@@ -3,7 +3,11 @@ name: Update public dashboard
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 6 * * *"
+    # CCC Programme meetings are currently fortnightly on Fridays.
+    # GitHub cron cannot express "every other week", so this runs each Friday
+    # evening and the first step allows only odd ISO weeks (e.g. 25 Sep 2026,
+    # week 39; 9 Oct, week 41) to continue.
+    - cron: "17 18 * * 5"
 
 permissions:
   contents: write
@@ -13,7 +17,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Check fortnightly programme-meeting cadence
+        id: cadence
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          WEEK=$(date -u +%V)
+          if [ $((10#$WEEK % 2)) -eq 1 ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "Odd ISO week $WEEK: scheduled post-meeting dashboard check."
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Even ISO week $WEEK: no CCC programme-meeting update expected."
+          fi
       - name: Check aggregate feed is configured
+        if: steps.cadence.outputs.run == 'true'
         id: feed
         env:
           FEED_URL: ${{ secrets.CCC_DASHBOARD_FEED_URL }}
@@ -25,7 +45,7 @@ jobs:
             echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Download aggregate dashboard feed
-        if: steps.feed.outputs.configured == 'true'
+        if: steps.cadence.outputs.run == 'true' && steps.feed.outputs.configured == 'true'
         env:
           FEED_URL: ${{ secrets.CCC_DASHBOARD_FEED_URL }}
           FEED_TOKEN: ${{ secrets.CCC_DASHBOARD_FEED_TOKEN }}
@@ -38,9 +58,10 @@ jobs:
           python scripts/validate_dashboard.py dashboard.next.json
           mv dashboard.next.json dashboard.json
       - name: Validate current dashboard
+        if: steps.cadence.outputs.run == 'true'
         run: python scripts/validate_dashboard.py dashboard.json
       - name: Commit changed aggregate data
-        if: steps.feed.outputs.configured == 'true'
+        if: steps.cadence.outputs.run == 'true' && steps.feed.outputs.configured == 'true'
         run: |
           if git diff --quiet -- dashboard.json; then
             echo "No dashboard changes."
