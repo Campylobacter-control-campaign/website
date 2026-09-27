@@ -2,6 +2,38 @@
   "updated": "25 September 2026",
   "site": "The Gambia",
   "source": "CCC site data report",
+  "site_status": [
+    {
+      "id": "gambia",
+      "label": "The Gambia",
+      "status": "active",
+      "note": "Sampling underway"
+    },
+    {
+      "id": "burkina-faso",
+      "label": "Burkina Faso",
+      "status": "inactive",
+      "note": "Dashboard feed not yet connected"
+    },
+    {
+      "id": "ghana",
+      "label": "Ghana",
+      "status": "inactive",
+      "note": "Dashboard feed not yet connected"
+    },
+    {
+      "id": "cote-divoire",
+      "label": "Côte d’Ivoire",
+      "status": "preparing",
+      "note": "Sampling planned after Nigeria"
+    },
+    {
+      "id": "nigeria",
+      "label": "Nigeria",
+      "status": "preparing",
+      "note": "Sampling expected to start shortly"
+    }
+  ],
   "headline": [
     {
       "label": "Children screened",
