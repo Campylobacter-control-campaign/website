@@ -2,6 +2,28 @@
   "updated": "25 September 2026",
   "site": "The Gambia",
   "source": "CCC site data report",
+  "headline": [
+    {
+      "label": "Children screened",
+      "value": 53,
+      "context": "The Gambia"
+    },
+    {
+      "label": "Diarrhoea cases enrolled",
+      "value": 28,
+      "context": "The Gambia"
+    },
+    {
+      "label": "Human specimens collected",
+      "value": 148,
+      "context": "50 enrolled people"
+    },
+    {
+      "label": "Community animals sampled",
+      "value": 103,
+      "context": "The Gambia"
+    }
+  ],
   "recruitment": {
     "screened": 53,
     "eligible": 41,
