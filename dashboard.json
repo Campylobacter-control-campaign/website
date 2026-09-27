@@ -1,136 +1,228 @@
 {
   "updated": "25 September 2026",
-  "headline": [
-    {
-      "label": "Children screened",
-      "value": 53,
-      "context": "The Gambia"
+  "site": "The Gambia",
+  "source": "CCC site data report",
+  "recruitment": {
+    "screened": 53,
+    "eligible": 41,
+    "cohorts": [
+      {
+        "id": "cases",
+        "label": "Diarrhoea cases",
+        "sub": "under 5 years",
+        "enrolled": 28,
+        "target": 300
+      },
+      {
+        "id": "controls",
+        "label": "Community controls",
+        "sub": "under 5 years",
+        "enrolled": 10,
+        "target": 135
+      },
+      {
+        "id": "household",
+        "label": "Household members",
+        "sub": "all ages",
+        "enrolled": 12,
+        "target": null
+      }
+    ]
+  },
+  "human_specimens": {
+    "people": 50,
+    "total": 148,
+    "types": [
+      {
+        "label": "Rectal swab (ATM)",
+        "value": 28
+      },
+      {
+        "label": "Dry swab (PCR)",
+        "value": 28
+      },
+      {
+        "label": "Dry swab (archive)",
+        "value": 28
+      },
+      {
+        "label": "Whole stool",
+        "value": 42
+      },
+      {
+        "label": "Stool (ATM)",
+        "value": 22
+      }
+    ],
+    "cohorts": [
+      {
+        "label": "Diarrhoea cases",
+        "people": 28,
+        "total": 104
+      },
+      {
+        "label": "Community children",
+        "people": 10,
+        "total": 20
+      },
+      {
+        "label": "Household members",
+        "people": 12,
+        "total": 24
+      }
+    ]
+  },
+  "human_lab": {
+    "totals": {
+      "culture_results": 50,
+      "culture_positive": 2,
+      "pcr_results": 23,
+      "pcr_positive": 3,
+      "confirmed_positive": 5,
+      "enrolled": 50
     },
-    {
-      "label": "Diarrhoea cases enrolled",
-      "value": 28,
-      "context": "The Gambia"
+    "cohorts": [
+      {
+        "label": "Diarrhoea cases",
+        "enrolled": 28,
+        "culture_results": 28,
+        "culture_positive": 1,
+        "pcr_results": 23,
+        "pcr_positive": 3,
+        "confirmed_positive": 4
+      },
+      {
+        "label": "Community children",
+        "enrolled": 10,
+        "culture_results": 10,
+        "culture_positive": 1,
+        "pcr_results": null,
+        "pcr_positive": null,
+        "confirmed_positive": 1
+      },
+      {
+        "label": "Household members",
+        "enrolled": 12,
+        "culture_results": 12,
+        "culture_positive": 0,
+        "pcr_results": null,
+        "pcr_positive": null,
+        "confirmed_positive": 0
+      }
+    ]
+  },
+  "demographics": {
+    "sex": {
+      "male": 24,
+      "female": 26
     },
-    {
-      "label": "Human specimens collected",
-      "value": 148,
-      "context": "Cases, community children and household members"
-    },
-    {
-      "label": "Community animals sampled",
-      "value": 103,
-      "context": "The Gambia"
-    }
-  ],
-  "progress": [
-    {
-      "label": "Diarrhoea cases",
-      "value": 28,
-      "target": 300,
-      "context": "Gambia enrolment target"
-    },
-    {
-      "label": "Community controls",
-      "value": 10,
-      "target": 135,
-      "context": "Gambia protocol target"
-    },
-    {
-      "label": "Community reservoir animals",
-      "value": 103,
+    "child_age": [
+      {
+        "label": "Diarrhoea cases",
+        "bands": [
+          {
+            "label": "0–11 months",
+            "value": 6
+          },
+          {
+            "label": "12–23 months",
+            "value": 19
+          },
+          {
+            "label": "24–59 months",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "label": "Community children",
+        "bands": [
+          {
+            "label": "0–11 months",
+            "value": 4
+          },
+          {
+            "label": "12–23 months",
+            "value": 4
+          },
+          {
+            "label": "24–59 months",
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "household_age": [
+      {
+        "label": "Under 5 years",
+        "value": 5
+      },
+      {
+        "label": "5 years or older",
+        "value": 7
+      }
+    ]
+  },
+  "animals": {
+    "community": {
+      "sampled": 103,
       "target": 400,
-      "context": "Up to 100 each: poultry, cattle, equids, goat/sheep/pig"
+      "specimens": 206,
+      "tested": 103,
+      "positive": 13
+    },
+    "species": [
+      {
+        "label": "Chicken / fowl / duck / turkey",
+        "value": 33
+      },
+      {
+        "label": "Sheep",
+        "value": 24
+      },
+      {
+        "label": "Goat",
+        "value": 18
+      },
+      {
+        "label": "Pig",
+        "value": 11
+      },
+      {
+        "label": "Cattle",
+        "value": 9
+      },
+      {
+        "label": "Horse / donkey / mule",
+        "value": 8
+      }
+    ],
+    "household": {
+      "sampled": 5,
+      "specimens": 10,
+      "tested": 5,
+      "positive": 1
     }
-  ],
-  "sampling": [
-    {
-      "site": "The Gambia",
-      "category": "Children screened",
-      "value": 53
+  },
+  "environment": {
+    "environmental": {
+      "collected": 6,
+      "tested": 6,
+      "positive": 0,
+      "detail": "2 kitchen · 2 eating area · 2 toilet"
     },
-    {
-      "site": "The Gambia",
-      "category": "Eligible children",
-      "value": 41
-    },
-    {
-      "site": "The Gambia",
-      "category": "Diarrhoea cases enrolled",
-      "value": 28
-    },
-    {
-      "site": "The Gambia",
-      "category": "Community children enrolled",
-      "value": 10
-    },
-    {
-      "site": "The Gambia",
-      "category": "Household members enrolled",
-      "value": 12
-    },
-    {
-      "site": "The Gambia",
-      "category": "Human specimens collected",
-      "value": 148
-    },
-    {
-      "site": "The Gambia",
-      "category": "Index-household animals sampled",
-      "value": 5
-    },
-    {
-      "site": "The Gambia",
-      "category": "Index-household animal specimens",
-      "value": 10
-    },
-    {
-      "site": "The Gambia",
-      "category": "Household environmental specimens",
-      "value": 6
-    },
-    {
-      "site": "The Gambia",
-      "category": "Household water specimens",
-      "value": 4
-    },
-    {
-      "site": "The Gambia",
-      "category": "Community animals sampled",
-      "value": 103
-    },
-    {
-      "site": "The Gambia",
-      "category": "Community animal specimens collected",
-      "value": 206
+    "water": {
+      "collected": 4,
+      "tested": 4,
+      "positive": 0,
+      "detail": "2 water source · 2 water storage"
     }
-  ],
-  "laboratory": [
-    {
-      "label": "Confirmed human positives",
-      "value": 5,
-      "context": "Current export across enrolled human cohorts"
-    },
-    {
-      "label": "Positive diarrhoea cases",
-      "value": 4,
-      "context": "28 cases enrolled; 5 PCR results pending"
-    },
-    {
-      "label": "Positive community animals",
-      "value": 13,
-      "context": "103 tested · 12.6%"
-    },
-    {
-      "label": "Positive household animals",
-      "value": 1,
-      "context": "5 tested"
-    }
-  ],
+  },
   "notes": [
-    "Current Gambia site snapshot from the CCC site data report dated 25 September 2026.",
-    "Counts are aggregate operational figures and contain no participant-level information.",
-    "Sampling and laboratory counts describe different stages of the workflow and should not be summed.",
-    "Progress targets are taken from the published GETCampy study protocol; operational sampling may adapt to field conditions.",
-    "The dashboard remains a project snapshot rather than a complete count across every CCC partner site."
+    "Aggregate operational figures only; no participant-level data are published.",
+    "The source slide says “148 specimens from 48 human”, while its cohort table totals 50 enrolled people. The dashboard uses the cohort-table total of 50.",
+    "For specimen types, the dashboard sums the cohort rows (28 rectal swabs in ATM, 28 dry PCR swabs, 28 archive swabs, 42 whole-stool samples and 22 stool-in-ATM samples), which reconcile to 148; the slide's displayed total row does not.",
+    "PCR results were pending for five diarrhoea cases at the time of the report.",
+    "Progress targets are from the published GETCampy protocol and operational sampling may adapt to field conditions."
   ]
 }
