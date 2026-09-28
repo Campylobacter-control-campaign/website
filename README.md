@@ -20,6 +20,10 @@ The public site is intentionally compact:
 
 Aggregate dashboard figures are stored in `dashboard.json`. Do not add participant-level data, credentials or restricted project material to this public repository.
 
+The public site is available in **English and French**. French pages live under `/fr/` and use the same aggregate dashboard feed as the English site, so published counts have a single source of truth.
+
+Dashboard updates can be checked automatically after the fortnightly programme-meeting cadence. The automation accepts only the approved aggregate JSON feed, validates it, and opens a pull request for human review rather than publishing directly to the default branch. See [dashboard automation](docs/dashboard-automation.md).
+
 ## Public resources
 
 - [GETCampy protocol paper](https://bmjopen.bmj.com/content/16/6/e109566)
