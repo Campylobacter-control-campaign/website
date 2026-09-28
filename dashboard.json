@@ -88,24 +88,29 @@
           "total": 148,
           "types": [
             {
-              "label": "Rectal swab (ATM)",
-              "value": 28
+              "label": "Rectal swab in ATM",
+              "value": 28,
+              "purpose": "Culture · diarrhoea cases"
             },
             {
-              "label": "Dry swab (PCR)",
-              "value": 28
+              "label": "Dry rectal swab",
+              "value": 28,
+              "purpose": "PCR · diarrhoea cases only"
             },
             {
-              "label": "Dry swab (archive)",
-              "value": 28
+              "label": "Dry rectal swab",
+              "value": 28,
+              "purpose": "Archive · diarrhoea cases"
             },
             {
               "label": "Whole stool",
-              "value": 42
+              "value": 42,
+              "purpose": "Cases, community children & household members"
             },
             {
-              "label": "Stool (ATM)",
-              "value": 22
+              "label": "Stool in ATM",
+              "value": 22,
+              "purpose": "Culture · community children & household members"
             }
           ],
           "cohorts": [
@@ -163,7 +168,25 @@
               "pcr_positive": null,
               "confirmed_positive": 0
             }
-          ]
+          ],
+          "testing": {
+            "culture": {
+              "label": "Culture",
+              "scope": "All enrolled human cohorts",
+              "tested": 50,
+              "positive": 2,
+              "specimens": "Rectal swab in ATM for cases; stool in ATM for community children and household members"
+            },
+            "pcr": {
+              "label": "PCR",
+              "scope": "Diarrhoea cases only",
+              "eligible": 28,
+              "tested": 23,
+              "positive": 3,
+              "pending": 5,
+              "specimens": "Dry rectal swab"
+            }
+          }
         },
         "demographics": {
           "sex": {
@@ -228,35 +251,68 @@
           "species": [
             {
               "label": "Chicken / fowl / duck / turkey",
-              "value": 33
+              "value": 33,
+              "icon": "chicken"
             },
             {
               "label": "Sheep",
-              "value": 24
+              "value": 24,
+              "icon": "sheep"
             },
             {
               "label": "Goat",
-              "value": 18
+              "value": 18,
+              "icon": "goat"
             },
             {
               "label": "Pig",
-              "value": 11
+              "value": 11,
+              "icon": "pig"
             },
             {
               "label": "Cattle",
-              "value": 9
+              "value": 9,
+              "icon": "cattle"
             },
             {
               "label": "Horse / donkey / mule",
-              "value": 8
+              "value": 8,
+              "icon": "equid"
             }
           ],
           "household": {
             "sampled": 5,
             "specimens": 10,
             "tested": 5,
-            "positive": 1
-          }
+            "positive": 1,
+            "species": [
+              {
+                "label": "Chicken / fowl / duck / turkey",
+                "icon": "chicken",
+                "animals": 2,
+                "specimens": 4,
+                "tested": 2,
+                "positive": 0
+              },
+              {
+                "label": "Sheep",
+                "icon": "sheep",
+                "animals": 2,
+                "specimens": 4,
+                "tested": 2,
+                "positive": 1
+              },
+              {
+                "label": "Goat",
+                "icon": "goat",
+                "animals": 1,
+                "specimens": 2,
+                "tested": 1,
+                "positive": 0
+              }
+            ]
+          },
+          "testing_method": "Culture"
         },
         "environment": {
           "environmental": {
@@ -270,7 +326,8 @@
             "tested": 4,
             "positive": 0,
             "detail": "2 water source · 2 water storage"
-          }
+          },
+          "testing_method": "Culture"
         },
         "notes": [
           "Aggregate operational figures only; no participant-level data are published.",
