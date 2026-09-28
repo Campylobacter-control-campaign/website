@@ -9,7 +9,7 @@ The public JSON has two levels:
 - `programme` — safe totals across all sites that currently have an approved aggregate dataset. These figures drive the homepage and the **All sites** dashboard.
 - `sites` — one registry entry per CCC country/site. Each entry has a status (`active`, `preparing`, `inactive` or `complete`) and either an aggregate `data` object or `null`.
 
-A site with `data: null` can be shown as preparing without publishing invented zero counts. When Nigeria or Côte d’Ivoire produces its first approved report, its `data` object can use the same blocks as The Gambia: recruitment, human specimens, laboratory results, grouped demographics, animals, environment and notes.
+A site with `data: null` can be shown as preparing without publishing invented zero counts. When Nigeria or Côte d’Ivoire produces its first approved report, its `data` object can use the same blocks as The Gambia: recruitment, human specimens, laboratory results, grouped demographics, animals, environment and notes. Testing metadata should travel with each site dataset as well: for The Gambia, culture applies across enrolled human cohorts while PCR is restricted to diarrhoea cases, and non-human samples are culture-based. This avoids the front end assuming every country uses an identical testing pathway.
 
 The front end automatically:
 1. shows the detailed reporting site while only one site has data;
