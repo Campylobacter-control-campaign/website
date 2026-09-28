@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "project": "GETCampy-Africa",
+  "status": "archived",
+  "description": "Historical aggregate sampling and analysis summary from the GETCampy-Africa study that preceded CCC.",
+  "source_policy": "Only aggregate figures explicitly supported by project summary files are shown. Participant-level REDCap exports are not used by the public archive.",
+  "sites": {
+    "gambia": {
+      "label": "The Gambia",
+      "source": "GETCampy Samples update — all sites, 18 August 2024; reconciled metagenome metadata build, 9 September 2026",
+      "field": {
+        "people": [
+          {
+            "label": "Diarrhoea cases",
+            "sampled": 300,
+            "positive": 15
+          },
+          {
+            "label": "Community controls",
+            "sampled": 135,
+            "positive": 7
+          },
+          {
+            "label": "Household members",
+            "sampled": 80,
+            "positive": 1
+          }
+        ],
+        "one_health": [
+          {
+            "label": "Household environment",
+            "sampled": 59,
+            "positive": 4,
+            "icon": "environment"
+          },
+          {
+            "label": "Household animals",
+            "sampled": 32,
+            "positive": 2,
+            "icon": "animal"
+          },
+          {
+            "label": "Community environment",
+            "sampled": 78,
+            "positive": 0,
+            "icon": "environment"
+          },
+          {
+            "label": "Community animals",
+            "sampled": 402,
+            "positive": 14,
+            "icon": "animal"
+          }
+        ],
+        "total_records": 1086,
+        "positive_total": 43,
+        "positive_label": "Campylobacter-positive in the August 2024 aggregate field summary"
+      },
+      "metagenomics": {
+        "master_rows": 439,
+        "groups": [
+          {
+            "label": "Cases",
+            "value": 224
+          },
+          {
+            "label": "Controls",
+            "value": 135
+          },
+          {
+            "label": "Household members",
+            "value": 80
+          }
+        ],
+        "analysis_rows": 324,
+        "analysis_groups": [
+          {
+            "label": "Cases",
+            "value": 139
+          },
+          {
+            "label": "Controls",
+            "value": 107
+          },
+          {
+            "label": "Household members",
+            "value": 78
+          }
+        ],
+        "culture_status": {
+          "positive": 21,
+          "negative": 413,
+          "no_record": 5
+        },
+        "note": "The 439-row metagenome master is a sequencing/metadata cohort, not the full field-recruitment total."
+      }
+    },
+    "burkina_faso": {
+      "label": "Burkina Faso",
+      "source": "GETCampy Samples update — Burkina Faso, 7 November 2024",
+      "field": {
+        "people": [
+          {
+            "label": "Medically attended diarrhoea cases",
+            "sampled": 360,
+            "positive": 40
+          }
+        ],
+        "one_health": [
+          {
+            "label": "Community environment / water",
+            "sampled": 78,
+            "positive": 10,
+            "icon": "environment"
+          },
+          {
+            "label": "Community animals",
+            "sampled": 362,
+            "positive": 100,
+            "icon": "animal"
+          }
+        ],
+        "total_records": 800,
+        "positive_total": 150,
+        "positive_label": "Campylobacter-positive in the November 2024 site summary"
+      },
+      "animal_species": [
+        {
+          "label": "Poultry",
+          "sampled": 118,
+          "positive": 53
+        },
+        {
+          "label": "Goat",
+          "sampled": 51,
+          "positive": 4
+        },
+        {
+          "label": "Sheep",
+          "sampled": 55,
+          "positive": 6
+        },
+        {
+          "label": "Equids",
+          "sampled": 1,
+          "positive": 0
+        },
+        {
+          "label": "Cattle",
+          "sampled": 45,
+          "positive": 1
+        },
+        {
+          "label": "Pig",
+          "sampled": 92,
+          "positive": 36
+        }
+      ]
+    },
+    "ghana": {
+      "label": "Ghana",
+      "source": "GETCampy Samples update — all sites, 18 August 2024",
+      "field": {
+        "people": [
+          {
+            "label": "Diarrhoeal child samples",
+            "sampled": 253,
+            "positive": null
+          },
+          {
+            "label": "Community human samples",
+            "sampled": 100,
+            "positive": null
+          }
+        ],
+        "one_health": [
+          {
+            "label": "Community environment / water",
+            "sampled": 17,
+            "positive": null,
+            "icon": "environment"
+          },
+          {
+            "label": "Community animals",
+            "sampled": 288,
+            "positive": null,
+            "icon": "animal"
+          }
+        ],
+        "total_records": 658,
+        "positive_total": null,
+        "positive_label": null
+      },
+      "animal_species": [
+        {
+          "label": "Poultry",
+          "sampled": 169,
+          "positive": null
+        },
+        {
+          "label": "Goat",
+          "sampled": 50,
+          "positive": null
+        },
+        {
+          "label": "Sheep",
+          "sampled": 28,
+          "positive": null
+        },
+        {
+          "label": "Cattle",
+          "sampled": 41,
+          "positive": null
+        }
+      ],
+      "note": "The Ghana source labels laboratory calls as presumptive rather than confirmed Campylobacter results. The public archive therefore shows sampling counts but does not present those presumptive calls as confirmed positives."
+    }
+  },
+  "notes": [
+    "GETCampy-Africa used related but not identical sampling structures across countries, so country totals should not be interpreted as directly comparable prevalence denominators.",
+    "The Gambia field-recruitment totals and the later metagenome master describe different stages of the study and are shown separately.",
+    "Burkina Faso figures use the later 7 November 2024 site update rather than the earlier 18 August 2024 all-sites snapshot.",
+    "Ghana positivity is deliberately omitted because the aggregate source describes the available calls as presumptive."
+  ]
+}
