@@ -17,7 +17,7 @@
       {
         "label": "Human specimens collected",
         "value": 148,
-        "context": "50 enrolled people"
+        "context": "Cohort table: 50 enrolled"
       },
       {
         "label": "Community animals sampled",
@@ -32,7 +32,7 @@
       "status": "active",
       "note": "Sampling underway",
       "updated": "25 September 2026",
-      "source": "CCC site data report",
+      "source": "CCC Gambia site data report · 25 September 2026",
       "data": {
         "headline": [
           {
@@ -48,7 +48,7 @@
           {
             "label": "Human specimens collected",
             "value": 148,
-            "context": "50 enrolled people"
+            "context": "Cohort table: 50 enrolled"
           },
           {
             "label": "Community animals sampled",
@@ -88,29 +88,19 @@
           "total": 148,
           "types": [
             {
-              "label": "Rectal swab in ATM",
-              "value": 28,
-              "purpose": "Culture · diarrhoea cases"
+              "label": "Diarrhoea cases",
+              "value": 104,
+              "purpose": "28 enrolled · 104 specimens"
             },
             {
-              "label": "Dry rectal swab",
-              "value": 28,
-              "purpose": "PCR · diarrhoea cases only"
+              "label": "Community children",
+              "value": 20,
+              "purpose": "10 enrolled · 20 specimens"
             },
             {
-              "label": "Dry rectal swab",
-              "value": 28,
-              "purpose": "Archive · diarrhoea cases"
-            },
-            {
-              "label": "Whole stool",
-              "value": 42,
-              "purpose": "Cases, community children & household members"
-            },
-            {
-              "label": "Stool in ATM",
-              "value": 22,
-              "purpose": "Culture · community children & household members"
+              "label": "Household members",
+              "value": 24,
+              "purpose": "12 enrolled · 24 specimens"
             }
           ],
           "cohorts": [
@@ -331,10 +321,11 @@
         },
         "notes": [
           "Aggregate operational figures only; no participant-level data are published.",
-          "The source slide says “148 specimens from 48 human”, while its cohort table totals 50 enrolled people. The dashboard uses the cohort-table total of 50.",
-          "For specimen types, the dashboard sums the cohort rows (28 rectal swabs in ATM, 28 dry PCR swabs, 28 archive swabs, 42 whole-stool samples and 22 stool-in-ATM samples), which reconcile to 148; the slide's displayed total row does not.",
-          "PCR results were pending for five diarrhoea cases at the time of the report.",
-          "Progress targets are from the published GETCampy protocol and operational sampling may adapt to field conditions."
+          "Source: CCC Gambia Site data report, 25 September 2026. The 4 September report is retained only as an earlier progress snapshot.",
+          "The 25 September slide states “148 specimens from 48 human”, but the cohort table on the same slide lists 28 cases, 10 community children and 12 household members (50 enrolled in total). The dashboard labels 50 explicitly as the cohort-table total rather than treating the conflicting narrative figure as resolved.",
+          "The specimen-type total row on the source slide is internally inconsistent: RA 28 + DP 28 + DS 28 + ST 40 + SA 20 = 144, although the slide reports 148 total specimens. The dashboard therefore does not invent corrected ST/SA totals; it displays the explicit cohort totals instead: 104 case specimens, 20 community-child specimens and 24 household-member specimens = 148.",
+          "PCR results were available for 23 of 28 diarrhoea cases; five were pending at the time of the report. PCR is not reported for community children or household members.",
+          "Progress targets are from the published GETCampy protocol: 300 diarrhoea cases, 135 paired community controls and up to 400 community reservoir animals (up to 100 in each of four reservoir groups)."
         ]
       }
     },
@@ -372,7 +363,7 @@
     }
   },
   "site": "The Gambia",
-  "source": "CCC site data report",
+  "source": "CCC Gambia site data report · 25 September 2026",
   "site_status": [
     {
       "id": "gambia",
@@ -419,7 +410,7 @@
     {
       "label": "Human specimens collected",
       "value": 148,
-      "context": "50 enrolled people"
+      "context": "Cohort table: 50 enrolled"
     },
     {
       "label": "Community animals sampled",
@@ -459,29 +450,19 @@
     "total": 148,
     "types": [
       {
-        "label": "Rectal swab in ATM",
-        "value": 28,
-        "purpose": "Culture · diarrhoea cases"
+        "label": "Diarrhoea cases",
+        "value": 104,
+        "purpose": "28 enrolled · 104 specimens"
       },
       {
-        "label": "Dry rectal swab",
-        "value": 28,
-        "purpose": "PCR · diarrhoea cases only"
+        "label": "Community children",
+        "value": 20,
+        "purpose": "10 enrolled · 20 specimens"
       },
       {
-        "label": "Dry rectal swab",
-        "value": 28,
-        "purpose": "Archive · diarrhoea cases"
-      },
-      {
-        "label": "Whole stool",
-        "value": 42,
-        "purpose": "Cases, community children & household members"
-      },
-      {
-        "label": "Stool in ATM",
-        "value": 22,
-        "purpose": "Culture · community children & household members"
+        "label": "Household members",
+        "value": 24,
+        "purpose": "12 enrolled · 24 specimens"
       }
     ],
     "cohorts": [
@@ -702,10 +683,11 @@
   },
   "notes": [
     "Aggregate operational figures only; no participant-level data are published.",
-    "The source slide says “148 specimens from 48 human”, while its cohort table totals 50 enrolled people. The dashboard uses the cohort-table total of 50.",
-    "For specimen types, the dashboard sums the cohort rows (28 rectal swabs in ATM, 28 dry PCR swabs, 28 archive swabs, 42 whole-stool samples and 22 stool-in-ATM samples), which reconcile to 148; the slide's displayed total row does not.",
-    "PCR results were pending for five diarrhoea cases at the time of the report.",
-    "Progress targets are from the published GETCampy protocol and operational sampling may adapt to field conditions."
+    "Source: CCC Gambia Site data report, 25 September 2026. The 4 September report is retained only as an earlier progress snapshot.",
+    "The 25 September slide states “148 specimens from 48 human”, but the cohort table on the same slide lists 28 cases, 10 community children and 12 household members (50 enrolled in total). The dashboard labels 50 explicitly as the cohort-table total rather than treating the conflicting narrative figure as resolved.",
+    "The specimen-type total row on the source slide is internally inconsistent: RA 28 + DP 28 + DS 28 + ST 40 + SA 20 = 144, although the slide reports 148 total specimens. The dashboard therefore does not invent corrected ST/SA totals; it displays the explicit cohort totals instead: 104 case specimens, 20 community-child specimens and 24 household-member specimens = 148.",
+    "PCR results were available for 23 of 28 diarrhoea cases; five were pending at the time of the report. PCR is not reported for community children or household members.",
+    "Progress targets are from the published GETCampy protocol: 300 diarrhoea cases, 135 paired community controls and up to 400 community reservoir animals (up to 100 in each of four reservoir groups)."
   ],
   "progress": [
     {
