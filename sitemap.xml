@@ -121,4 +121,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://campylobacter-control-campaign.github.io/website/fr/news-gambia-sampling.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://campylobacter-control-campaign.github.io/website/news-gambia-sampling.html"/>
   </url>
+  <url>
+    <loc>https://campylobacter-control-campaign.github.io/website/getcampy-archive.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://campylobacter-control-campaign.github.io/website/getcampy-archive.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://campylobacter-control-campaign.github.io/website/fr/getcampy-archive.html"/>
+  </url>
+  <url>
+    <loc>https://campylobacter-control-campaign.github.io/website/fr/getcampy-archive.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://campylobacter-control-campaign.github.io/website/fr/getcampy-archive.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://campylobacter-control-campaign.github.io/website/getcampy-archive.html"/>
+  </url>
 </urlset>
