@@ -16,6 +16,7 @@ FORBIDDEN = {
     "free_text","notes_free_text"
 }
 ALLOWED_STATUS = {"active","preparing","inactive","complete"}
+REPORTING_STATUS = {"active","complete"}
 
 def fail(msg): raise SystemExit(msg)
 def nonneg_int(v,label):
@@ -42,6 +43,8 @@ def validate_site(site_id, site):
     if site["data"] is None:
         if site["status"] == "active": fail(f"{trail} is active but has no aggregate data")
         return False
+    if site["status"] not in REPORTING_STATUS:
+        fail(f"{trail} contains aggregate data while status is {site['status']!r}")
     d=site["data"]
     for key in ("headline","recruitment","human_specimens","human_lab","demographics","animals","environment","notes"):
         if key not in d: fail(f"{trail}.data missing {key}")
