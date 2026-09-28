@@ -80,7 +80,7 @@ body{background:#fff;color:var(--ink)}
 <section class="dashboard-hero">
   <div class="hero-copy">
     <h1 id="dashboard-title">Gambie</h1>
-    <p id="dashboard-lead" class="lead">Échantillonnage « One Health » pour comprendre et contrôler <em>Campylobacter</em>.</p>
+    <p id="dashboard-lead" class="lead">Échantillonnage One Health pour comprendre et contrôler <em>Campylobacter</em>.</p>
     <div class="hero-meta"><span>Dernière mise à jour : <strong id="updated">—</strong></span><span id="source">Rapport agrégé du site</span><span><a href="getcampy-archive.html">Archives GETCampy-Africa →</a></span></div>
   </div>
   <div class="one-health" aria-label="Cadre d’échantillonnage « One Health »">
@@ -137,7 +137,7 @@ function renderTabs(){
 function selectView(id){currentView=id;renderTabs();id==='all'?renderProgramme():renderSite(id)}
 function renderProgramme(){
  document.getElementById('programme-overview').hidden=false;document.getElementById('site-detail').hidden=true;
- document.getElementById('dashboard-title').textContent='Programme CCC';document.getElementById('dashboard-lead').innerHTML='Échantillonnage « One Health » sur les sites partenaires de CCC.';
+ document.getElementById('dashboard-title').textContent='Programme CCC';document.getElementById('dashboard-lead').innerHTML='Échantillonnage One Health sur les sites partenaires de CCC.';
  document.getElementById('updated').textContent=dashboard.updated;document.getElementById('source').textContent=dashboard.programme.reporting_sites+' site déclarant'+(dashboard.programme.reporting_sites===1?'':'s');
  document.getElementById('programme-summary').innerHTML=dashboard.programme.headline.map(x=>'<article class="programme-kpi"><strong>'+fmt(x.value)+'</strong><b>'+x.label+'</b><span>'+x.context+'</span></article>').join('');
  document.getElementById('site-status-grid').innerHTML=Object.entries(dashboard.sites).map(([id,s])=>'<article class="site-status-card"><span class="status-pill '+s.status+'">'+tr(s.status)+'</span><h3>'+s.label+'</h3><p>'+s.note+'</p>'+(s.data?'<button class="button secondary" type="button" data-open-site="'+id+'">Voir le site</button>':'')+'</article>').join('');
@@ -147,7 +147,7 @@ function renderSite(id){
  const site=dashboard.sites[id];if(!site){renderProgramme();return}
  if(!site.data){document.getElementById('programme-overview').hidden=false;document.getElementById('site-detail').hidden=true;document.getElementById('dashboard-title').textContent=site.label;document.getElementById('dashboard-lead').textContent=site.note+'.';document.getElementById('updated').textContent='Pas encore de données';document.getElementById('source').textContent='Flux agrégé en attente';document.getElementById('programme-summary').innerHTML='<article class="programme-kpi" style="grid-column:1/-1"><strong>Bientôt disponible</strong><b>'+site.label+'</b><span>Les données agrégées « One Health » de recrutement, d’échantillonnage et de laboratoire apparaîtront après le premier rapport approuvé.</span></article>';document.getElementById('site-status-grid').innerHTML='';return}
  const d=site.data;document.getElementById('programme-overview').hidden=true;document.getElementById('site-detail').hidden=false;
- document.getElementById('dashboard-title').textContent=site.label;document.getElementById('dashboard-lead').innerHTML='Échantillonnage « One Health » pour comprendre et contrôler <em>Campylobacter</em>.';
+ document.getElementById('dashboard-title').textContent=site.label;document.getElementById('dashboard-lead').innerHTML='Échantillonnage One Health pour comprendre et contrôler <em>Campylobacter</em>.';
  document.getElementById('updated').textContent=site.updated||dashboard.updated;document.getElementById('source').textContent='Source des données : '+site.source;
  document.getElementById('recruitment').innerHTML=d.recruitment.cohorts.map(x=>'<div class="kpi"><div class="kpi-label">'+x.label+'<br><span class="kpi-sub">'+x.sub+'</span></div><div class="kpi-value">'+fmt(x.enrolled)+(x.target?' / '+fmt(x.target):'')+'</div>'+progress(x.enrolled,x.target)+'</div>').join('');
  document.getElementById('specimen-title').textContent='Prélèvements humains par cohorte (n = '+d.human_specimens.total+')';donut(document.getElementById('specimen-donut'),d.human_specimens.types,d.human_specimens.total);
