@@ -38,7 +38,11 @@ Configure these repository Actions secrets:
 - `CCC_DASHBOARD_FEED_URL` — HTTPS endpoint returning the complete schema-v2 programme JSON.
 - `CCC_DASHBOARD_FEED_TOKEN` — optional bearer token if the aggregate endpoint requires authentication.
 
-The workflow checks for updates **fortnightly after the CCC Programme meeting**. It is scheduled for Friday evening and gated to the odd ISO weeks anchored on the 25 September 2026 programme meeting (week 39), so the next scheduled checks are 9 October, 23 October, and so on. It can also be run manually.
+The workflow checks for updates **fortnightly after the CCC Programme meeting**. GitHub schedules it every Friday evening, but the job calculates the exact number of days since the **25 September 2026** programme-meeting anchor and proceeds only when that interval is divisible by 14. This avoids ISO-week parity drifting in years with week 53. It can also be run manually, which bypasses the cadence gate.
+
+The feed URL must use HTTPS. The download deliberately does **not** follow redirects, so an optional bearer token cannot be forwarded to a different redirect host.
+
+When a validated feed changes `dashboard.json`, the workflow creates an `automated/dashboard-<run id>` branch and opens a pull request instead of pushing directly to the default branch. This keeps a human review step between the aggregate feed and the public website. If the feed has not changed, no branch or pull request is created.
 
 ## Recommended upstream pattern
 
@@ -69,6 +73,18 @@ For Nigeria, Côte d’Ivoire or another site:
 3. Set the site's `updated` and `source`, attach the aggregate `data`, and change status to `active`.
 4. Recalculate the approved `programme.headline` totals and `programme.reporting_sites`.
 5. Run `python scripts/validate_dashboard.py dashboard.json`.
-6. Publish only if validation succeeds.
+6. Let the scheduled/manual workflow open a dashboard-update pull request and review the aggregate totals, source date and site status before merging.
 
 Burkina Faso and Ghana can remain registered but inactive until the programme decides which data stream should populate the public dashboard.
+
+
+## Operational checklist
+
+Before enabling the live feed:
+
+1. Set `CCC_DASHBOARD_FEED_URL` to the approved **HTTPS aggregate-only endpoint**.
+2. Add `CCC_DASHBOARD_FEED_TOKEN` only if that endpoint requires a bearer token.
+3. Run the workflow manually once.
+4. Confirm the candidate JSON passes validation and that a pull request is created only when the aggregate data differ from `main`.
+5. Review the first automated pull request against the corresponding site/programme report before merging.
+6. Keep participant-level exports, REDCap/SurveyCTO credentials and raw records entirely outside this repository and GitHub Actions.

@@ -4,71 +4,124 @@ on:
   workflow_dispatch:
   schedule:
     # CCC Programme meetings are currently fortnightly on Fridays.
-    # GitHub cron cannot express "every other week", so this runs each Friday
-    # evening and the first step allows only odd ISO weeks (e.g. 25 Sep 2026,
-    # week 39; 9 Oct, week 41) to continue.
+    # The job runs every Friday evening, then checks the exact number of days
+    # since the 25 Sep 2026 programme-meeting anchor before doing any feed work.
     - cron: "17 18 * * 5"
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Check fortnightly programme-meeting cadence
         id: cadence
+        shell: bash
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "Manual run: bypassing cadence gate."
             exit 0
           fi
-          WEEK=$(date -u +%V)
-          if [ $((10#$WEEK % 2)) -eq 1 ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-            echo "Odd ISO week $WEEK: scheduled post-meeting dashboard check."
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-            echo "Even ISO week $WEEK: no CCC programme-meeting update expected."
-          fi
+
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          from datetime import date
+
+          anchor = date(2026, 9, 25)
+          today = date.today()
+          days = (today - anchor).days
+          should_run = days >= 0 and days % 14 == 0
+          print(f"run={'true' if should_run else 'false'}")
+          PY
+
+      - name: Explain skipped cadence
+        if: steps.cadence.outputs.run != 'true'
+        run: echo "Not a fortnightly CCC dashboard-update Friday; leaving the dashboard unchanged."
+
       - name: Check aggregate feed is configured
         if: steps.cadence.outputs.run == 'true'
         id: feed
         env:
           FEED_URL: ${{ secrets.CCC_DASHBOARD_FEED_URL }}
+        shell: bash
         run: |
           if [ -z "$FEED_URL" ]; then
             echo "configured=false" >> "$GITHUB_OUTPUT"
             echo "CCC_DASHBOARD_FEED_URL is not configured; leaving dashboard unchanged."
-          else
-            echo "configured=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+
+          case "$FEED_URL" in
+            https://*) ;;
+            *)
+              echo "::error::CCC_DASHBOARD_FEED_URL must use HTTPS."
+              exit 1
+              ;;
+          esac
+
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+
       - name: Download aggregate dashboard feed
         if: steps.cadence.outputs.run == 'true' && steps.feed.outputs.configured == 'true'
         env:
           FEED_URL: ${{ secrets.CCC_DASHBOARD_FEED_URL }}
           FEED_TOKEN: ${{ secrets.CCC_DASHBOARD_FEED_TOKEN }}
+        shell: bash
         run: |
+          CURL_ARGS=(--fail --silent --show-error --proto '=https' --max-time 60)
+
+          # Do not follow redirects. In particular, an authenticated request must
+          # never forward the bearer token to a redirected host.
           if [ -n "$FEED_TOKEN" ]; then
-            curl --fail --silent --show-error --location --header "Authorization: Bearer $FEED_TOKEN" "$FEED_URL" -o dashboard.next.json
+            curl "${CURL_ARGS[@]}" --header "Authorization: Bearer $FEED_TOKEN" "$FEED_URL" -o dashboard.next.json
           else
-            curl --fail --silent --show-error --location "$FEED_URL" -o dashboard.next.json
+            curl "${CURL_ARGS[@]}" "$FEED_URL" -o dashboard.next.json
           fi
+
           python scripts/validate_dashboard.py dashboard.next.json
           mv dashboard.next.json dashboard.json
+
       - name: Validate current dashboard
         if: steps.cadence.outputs.run == 'true'
         run: python scripts/validate_dashboard.py dashboard.json
-      - name: Commit changed aggregate data
+
+      - name: Prepare dashboard update branch
         if: steps.cadence.outputs.run == 'true' && steps.feed.outputs.configured == 'true'
+        id: changes
+        shell: bash
         run: |
           if git diff --quiet -- dashboard.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No dashboard changes."
             exit 0
           fi
+
+          BRANCH="automated/dashboard-${GITHUB_RUN_ID}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
           git config user.name "ccc-dashboard-bot"
           git config user.email "actions@users.noreply.github.com"
+          git switch -c "$BRANCH"
           git add dashboard.json
           git commit -m "Update aggregate dashboard data"
-          git push
+          git push --set-upstream origin "$BRANCH"
+
+      - name: Open dashboard update pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.changes.outputs.branch }}
+        shell: bash
+        run: |
+          gh pr create \
+            --base "${{ github.event.repository.default_branch }}" \
+            --head "$BRANCH" \
+            --title "Update aggregate CCC dashboard data" \
+            --body "Automated fortnightly dashboard update. The candidate aggregate feed passed \`scripts/validate_dashboard.py\`. No participant-level data should be present. Please review the programme/site totals and source dates before merging."
