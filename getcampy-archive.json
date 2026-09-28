@@ -187,7 +187,7 @@
             "icon": "animal"
           }
         ],
-        "total_records": 658,
+        "total_records": null,
         "positive_total": null,
         "positive_label": null
       },
@@ -217,6 +217,7 @@
     }
   },
   "notes": [
+    "No cross-site grand total is calculated: the source files mix participants, animals and environmental specimens, and not every country sheet reports the same categories.",
     "GETCampy-Africa used related but not identical sampling structures across countries, so country totals should not be interpreted as directly comparable prevalence denominators.",
     "The Gambia field-recruitment totals and the later metagenome master describe different stages of the study and are shown separately.",
     "Burkina Faso figures use the later 7 November 2024 site update rather than the earlier 18 August 2024 all-sites snapshot.",
