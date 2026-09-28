@@ -370,5 +370,341 @@
       "source": null,
       "data": null
     }
-  }
+  },
+  "site": "The Gambia",
+  "source": "CCC site data report",
+  "site_status": [
+    {
+      "id": "gambia",
+      "label": "The Gambia",
+      "status": "active",
+      "note": "Sampling underway"
+    },
+    {
+      "id": "nigeria",
+      "label": "Nigeria",
+      "status": "preparing",
+      "note": "Sampling expected to start shortly"
+    },
+    {
+      "id": "cote-divoire",
+      "label": "Côte d’Ivoire",
+      "status": "preparing",
+      "note": "Sampling planned after Nigeria"
+    },
+    {
+      "id": "burkina-faso",
+      "label": "Burkina Faso",
+      "status": "inactive",
+      "note": "Dashboard feed not yet connected"
+    },
+    {
+      "id": "ghana",
+      "label": "Ghana",
+      "status": "inactive",
+      "note": "Dashboard feed not yet connected"
+    }
+  ],
+  "headline": [
+    {
+      "label": "Children screened",
+      "value": 53,
+      "context": "The Gambia"
+    },
+    {
+      "label": "Diarrhoea cases enrolled",
+      "value": 28,
+      "context": "The Gambia"
+    },
+    {
+      "label": "Human specimens collected",
+      "value": 148,
+      "context": "50 enrolled people"
+    },
+    {
+      "label": "Community animals sampled",
+      "value": 103,
+      "context": "The Gambia"
+    }
+  ],
+  "recruitment": {
+    "screened": 53,
+    "eligible": 41,
+    "cohorts": [
+      {
+        "id": "cases",
+        "label": "Diarrhoea cases",
+        "sub": "under 5 years",
+        "enrolled": 28,
+        "target": 300
+      },
+      {
+        "id": "controls",
+        "label": "Community controls",
+        "sub": "under 5 years",
+        "enrolled": 10,
+        "target": 135
+      },
+      {
+        "id": "household",
+        "label": "Household members",
+        "sub": "all ages",
+        "enrolled": 12,
+        "target": null
+      }
+    ]
+  },
+  "human_specimens": {
+    "people": 50,
+    "total": 148,
+    "types": [
+      {
+        "label": "Rectal swab in ATM",
+        "value": 28,
+        "purpose": "Culture · diarrhoea cases"
+      },
+      {
+        "label": "Dry rectal swab",
+        "value": 28,
+        "purpose": "PCR · diarrhoea cases only"
+      },
+      {
+        "label": "Dry rectal swab",
+        "value": 28,
+        "purpose": "Archive · diarrhoea cases"
+      },
+      {
+        "label": "Whole stool",
+        "value": 42,
+        "purpose": "Cases, community children & household members"
+      },
+      {
+        "label": "Stool in ATM",
+        "value": 22,
+        "purpose": "Culture · community children & household members"
+      }
+    ],
+    "cohorts": [
+      {
+        "label": "Diarrhoea cases",
+        "people": 28,
+        "total": 104
+      },
+      {
+        "label": "Community children",
+        "people": 10,
+        "total": 20
+      },
+      {
+        "label": "Household members",
+        "people": 12,
+        "total": 24
+      }
+    ]
+  },
+  "human_lab": {
+    "totals": {
+      "culture_results": 50,
+      "culture_positive": 2,
+      "pcr_results": 23,
+      "pcr_positive": 3,
+      "confirmed_positive": 5,
+      "enrolled": 50
+    },
+    "cohorts": [
+      {
+        "label": "Diarrhoea cases",
+        "enrolled": 28,
+        "culture_results": 28,
+        "culture_positive": 1,
+        "pcr_results": 23,
+        "pcr_positive": 3,
+        "confirmed_positive": 4
+      },
+      {
+        "label": "Community children",
+        "enrolled": 10,
+        "culture_results": 10,
+        "culture_positive": 1,
+        "pcr_results": null,
+        "pcr_positive": null,
+        "confirmed_positive": 1
+      },
+      {
+        "label": "Household members",
+        "enrolled": 12,
+        "culture_results": 12,
+        "culture_positive": 0,
+        "pcr_results": null,
+        "pcr_positive": null,
+        "confirmed_positive": 0
+      }
+    ],
+    "testing": {
+      "culture": {
+        "label": "Culture",
+        "scope": "All enrolled human cohorts",
+        "tested": 50,
+        "positive": 2,
+        "specimens": "Rectal swab in ATM for cases; stool in ATM for community children and household members"
+      },
+      "pcr": {
+        "label": "PCR",
+        "scope": "Diarrhoea cases only",
+        "eligible": 28,
+        "tested": 23,
+        "positive": 3,
+        "pending": 5,
+        "specimens": "Dry rectal swab"
+      }
+    }
+  },
+  "demographics": {
+    "sex": {
+      "male": 24,
+      "female": 26
+    },
+    "child_age": [
+      {
+        "label": "Diarrhoea cases",
+        "bands": [
+          {
+            "label": "0–11 months",
+            "value": 6
+          },
+          {
+            "label": "12–23 months",
+            "value": 19
+          },
+          {
+            "label": "24–59 months",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "label": "Community children",
+        "bands": [
+          {
+            "label": "0–11 months",
+            "value": 4
+          },
+          {
+            "label": "12–23 months",
+            "value": 4
+          },
+          {
+            "label": "24–59 months",
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "household_age": [
+      {
+        "label": "Under 5 years",
+        "value": 5
+      },
+      {
+        "label": "5 years or older",
+        "value": 7
+      }
+    ]
+  },
+  "animals": {
+    "community": {
+      "sampled": 103,
+      "target": 400,
+      "specimens": 206,
+      "tested": 103,
+      "positive": 13
+    },
+    "species": [
+      {
+        "label": "Chicken / fowl / duck / turkey",
+        "value": 33,
+        "icon": "chicken"
+      },
+      {
+        "label": "Sheep",
+        "value": 24,
+        "icon": "sheep"
+      },
+      {
+        "label": "Goat",
+        "value": 18,
+        "icon": "goat"
+      },
+      {
+        "label": "Pig",
+        "value": 11,
+        "icon": "pig"
+      },
+      {
+        "label": "Cattle",
+        "value": 9,
+        "icon": "cattle"
+      },
+      {
+        "label": "Horse / donkey / mule",
+        "value": 8,
+        "icon": "equid"
+      }
+    ],
+    "household": {
+      "sampled": 5,
+      "specimens": 10,
+      "tested": 5,
+      "positive": 1,
+      "species": [
+        {
+          "label": "Chicken / fowl / duck / turkey",
+          "icon": "chicken",
+          "animals": 2,
+          "specimens": 4,
+          "tested": 2,
+          "positive": 0
+        },
+        {
+          "label": "Sheep",
+          "icon": "sheep",
+          "animals": 2,
+          "specimens": 4,
+          "tested": 2,
+          "positive": 1
+        },
+        {
+          "label": "Goat",
+          "icon": "goat",
+          "animals": 1,
+          "specimens": 2,
+          "tested": 1,
+          "positive": 0
+        }
+      ]
+    },
+    "testing_method": "Culture"
+  },
+  "environment": {
+    "environmental": {
+      "collected": 6,
+      "tested": 6,
+      "positive": 0,
+      "detail": "2 kitchen · 2 eating area · 2 toilet"
+    },
+    "water": {
+      "collected": 4,
+      "tested": 4,
+      "positive": 0,
+      "detail": "2 water source · 2 water storage"
+    },
+    "testing_method": "Culture"
+  },
+  "notes": [
+    "Aggregate operational figures only; no participant-level data are published.",
+    "The source slide says “148 specimens from 48 human”, while its cohort table totals 50 enrolled people. The dashboard uses the cohort-table total of 50.",
+    "For specimen types, the dashboard sums the cohort rows (28 rectal swabs in ATM, 28 dry PCR swabs, 28 archive swabs, 42 whole-stool samples and 22 stool-in-ATM samples), which reconcile to 148; the slide's displayed total row does not.",
+    "PCR results were pending for five diarrhoea cases at the time of the report.",
+    "Progress targets are from the published GETCampy protocol and operational sampling may adapt to field conditions."
+  ]
 }
