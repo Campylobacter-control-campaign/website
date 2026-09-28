@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="assets/styles.css">
   <style>
     .consortium-intro{display:flex;justify-content:space-between;gap:1.5rem;align-items:end;flex-wrap:wrap}
-    .partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
-    .partner-card{background:#fff;border:1px solid var(--line);border-radius:1.15rem;padding:1.1rem}
+    .partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;margin-top:1.5rem}
+    .partner-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.05rem;box-shadow:var(--shadow)}
     .partner-card h3{margin-bottom:.35rem}.partner-site{color:var(--muted);margin:.25rem 0 .75rem}
     .partner-card details{border-top:1px solid var(--line);padding-top:.7rem;margin-top:.7rem}
     .partner-card summary{cursor:pointer;font-weight:800;color:var(--accent)}
@@ -21,7 +21,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="index.html"><img class="brand-logo" src="assets/CCClogo.png" alt="CCC logo"><span class="brand-text">Campylobacter Control Campaign</span></a>
-    <nav class="nav"><a href="science.html">Science</a><a href="dashboard.html">Dashboard</a><a href="profiles.html">People</a><a href="resources.html">Resources</a><a href="news.html">News</a><a href="contact.html">Contact</a></nav>
+    <nav class="nav"><a href="science.html">Science</a><a href="dashboard.html">Dashboard</a><a href="profiles.html" aria-current="page">People</a><a href="resources.html">Resources</a><a href="news.html">News</a><a href="contact.html">Contact</a></nav>
   </header>
   <main>
     <section class="page-hero">
