@@ -67,6 +67,15 @@ def validate_site(site_id, site):
 
     lab=d["human_lab"]["totals"]
     if lab["confirmed_positive"] > lab["enrolled"]: fail(f"{trail}: confirmed human positives exceed enrolled")
+    testing=d["human_lab"].get("testing")
+    if testing:
+        culture=testing["culture"]; pcr=testing["pcr"]
+        if culture["tested"] != lab["culture_results"] or culture["positive"] != lab["culture_positive"]:
+            fail(f"{trail}: culture testing summary does not match laboratory totals")
+        if pcr["tested"] != lab["pcr_results"] or pcr["positive"] != lab["pcr_positive"]:
+            fail(f"{trail}: PCR testing summary does not match laboratory totals")
+        if pcr.get("eligible") is not None and pcr["tested"] + pcr.get("pending",0) != pcr["eligible"]:
+            fail(f"{trail}: PCR tested + pending does not match eligible case count")
 
     a=d["animals"]["community"]
     for k in ("sampled","target","specimens","tested","positive"): nonneg_int(a[k],trail+".animals.community."+k)
