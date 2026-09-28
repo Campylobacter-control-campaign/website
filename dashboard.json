@@ -706,5 +706,109 @@
     "For specimen types, the dashboard sums the cohort rows (28 rectal swabs in ATM, 28 dry PCR swabs, 28 archive swabs, 42 whole-stool samples and 22 stool-in-ATM samples), which reconcile to 148; the slide's displayed total row does not.",
     "PCR results were pending for five diarrhoea cases at the time of the report.",
     "Progress targets are from the published GETCampy protocol and operational sampling may adapt to field conditions."
+  ],
+  "progress": [
+    {
+      "label": "Diarrhoea cases",
+      "value": 28,
+      "target": 300,
+      "context": "Gambia enrolment target"
+    },
+    {
+      "label": "Community controls",
+      "value": 10,
+      "target": 135,
+      "context": "Gambia protocol target"
+    },
+    {
+      "label": "Community reservoir animals",
+      "value": 103,
+      "target": 400,
+      "context": "Up to 100 each: poultry, cattle, equids, goat/sheep/pig"
+    }
+  ],
+  "sampling": [
+    {
+      "site": "The Gambia",
+      "category": "Children screened",
+      "value": 53
+    },
+    {
+      "site": "The Gambia",
+      "category": "Eligible children",
+      "value": 41
+    },
+    {
+      "site": "The Gambia",
+      "category": "Diarrhoea cases enrolled",
+      "value": 28
+    },
+    {
+      "site": "The Gambia",
+      "category": "Community children enrolled",
+      "value": 10
+    },
+    {
+      "site": "The Gambia",
+      "category": "Household members enrolled",
+      "value": 12
+    },
+    {
+      "site": "The Gambia",
+      "category": "Human specimens collected",
+      "value": 148
+    },
+    {
+      "site": "The Gambia",
+      "category": "Index-household animals sampled",
+      "value": 5
+    },
+    {
+      "site": "The Gambia",
+      "category": "Index-household animal specimens",
+      "value": 10
+    },
+    {
+      "site": "The Gambia",
+      "category": "Household environmental specimens",
+      "value": 6
+    },
+    {
+      "site": "The Gambia",
+      "category": "Household water specimens",
+      "value": 4
+    },
+    {
+      "site": "The Gambia",
+      "category": "Community animals sampled",
+      "value": 103
+    },
+    {
+      "site": "The Gambia",
+      "category": "Community animal specimens collected",
+      "value": 206
+    }
+  ],
+  "laboratory": [
+    {
+      "label": "Confirmed human positives",
+      "value": 5,
+      "context": "Current export across enrolled human cohorts"
+    },
+    {
+      "label": "Positive diarrhoea cases",
+      "value": 4,
+      "context": "28 cases enrolled; 5 PCR results pending"
+    },
+    {
+      "label": "Positive community animals",
+      "value": 13,
+      "context": "103 tested · 12.6%"
+    },
+    {
+      "label": "Positive household animals",
+      "value": 1,
+      "context": "5 tested"
+    }
   ]
 }
