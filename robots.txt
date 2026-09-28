@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://campylobacter-control-campaign.github.io/website/sitemap.xml
