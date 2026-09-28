@@ -135,6 +135,6 @@ function renderSite(id){
  document.getElementById('notes').innerHTML=d.notes.map(n=>'<p>'+n+'</p>').join('');document.getElementById('field-update-link').style.display=id==='gambia'?'inline':'none';
 }
 document.getElementById('people-art').innerHTML=peopleIcon();document.getElementById('animals-art').innerHTML=animalsHero();document.getElementById('environment-art').innerHTML=environmentIcon();
-fetch('dashboard.json').then(r=>{if(!r.ok)throw new Error();return r.json()}).then(d=>{dashboard=d;const reporting=Object.entries(d.sites).filter(([id,s])=>s.data);currentView=reporting.length>1?'all':(reporting[0]?reporting[0][0]:'all');selectView(currentView)}).catch(()=>{document.getElementById('site-detail').innerHTML='<div class="notice span-12">Dashboard data could not be loaded.</div>'});
+fetch('dashboard.json?v=2-20260928',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Dashboard feed returned '+r.status);return r.json()}).then(d=>{dashboard=d;const reporting=Object.entries(d.sites).filter(([id,s])=>s.data);currentView=reporting.length>1?'all':(reporting[0]?reporting[0][0]:'all');selectView(currentView)}).catch(err=>{console.error('CCC dashboard render error:',err);document.getElementById('site-detail').innerHTML='<div class="notice span-12"><strong>Dashboard data could not be loaded.</strong> Please refresh this page; if the problem persists, the aggregate feed may be updating.</div>';});
 </script>
 </body></html>
