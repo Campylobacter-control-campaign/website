@@ -88,3 +88,17 @@ Before enabling the live feed:
 4. Confirm the candidate JSON passes validation and that a pull request is created only when the aggregate data differ from `main`.
 5. Review the first automated pull request against the corresponding site/programme report before merging.
 6. Keep participant-level exports, REDCap/SurveyCTO credentials and raw records entirely outside this repository and GitHub Actions.
+
+
+## 9 October 2026 manual update
+
+The Gambia aggregate counts were updated from the CCC Gambia site data report dated 9 October 2026 (recruitment window 31 August–8 October). The public JSON retains only site-level totals and category summaries.
+
+- Human: 84 screened, 65 eligible, 46 diarrhoea cases, 22 community children, 33 household members, 280 specimens.
+- Laboratory: 85 culture results / 8 positive; 39 PCR results / 7 positive in cases only; 12 distinct confirmed-positive participants across cohorts. Seven case PCR results pending.
+- Community animals: 122 sampled, 240 specimens, 105 tested, 14 positive; species-specific tested and positive counts taken directly from the 9 October report.
+- Household animals: 11 sampled, 22 specimens, 11 tested, 3 positive.
+- Environment: 15 collected and tested, 0 positive; water: 10 collected, 8 tested, 0 positive.
+- Nigeria: field sampling has started and animal positives have been reported verbally, but no approved aggregate counts or denominators were supplied. Use status `sampling` with `data: null` until a validated Nigeria site report is available. Do not count Nigeria as a numeric reporting site.
+
+The `sampling` status is distinct from `active`: it describes field activity, not a validated public data feed. The site must not display Gambian counts as Nigerian results.
