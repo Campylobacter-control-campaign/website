@@ -57,6 +57,10 @@ def validate_site(site_id, site):
     for i,c in enumerate(r["cohorts"]):
         nonneg_int(c["enrolled"],f"{trail}.recruitment.cohorts[{i}].enrolled")
         if c.get("target") is not None: nonneg_int(c["target"],f"{trail}.recruitment.cohorts[{i}].target")
+        # The public cohort name is fixed across English and French dashboard
+        # panels. Keep the stable 'controls' ID for backwards compatibility.
+        if c.get("id") == "controls" and c.get("label") != "Community children":
+            fail(f"{trail}: the controls cohort must be labelled 'Community children'")
 
     hs=d["human_specimens"]
     nonneg_int(hs["people"],trail+".human_specimens.people")

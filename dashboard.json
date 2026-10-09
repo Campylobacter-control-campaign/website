@@ -69,7 +69,7 @@
             },
             {
               "id": "controls",
-              "label": "Community controls",
+              "label": "Community children",
               "sub": "under 5 years",
               "enrolled": 22,
               "target": 135
@@ -356,7 +356,7 @@
           "Community animals: 122 sampled, 240 specimens collected, 105 animals tested and 14 positive. Species-level positivity uses animals tested, not animals sampled, as the denominator.",
           "Household animals: 11 sampled, 22 specimens collected, 11 tested and 3 positive (all three among four tested sheep).",
           "Environment: 15 specimens collected and tested, none positive. Water: 10 collected, 8 tested, none positive; two water tests pending/not reported.",
-          "Targets are from the published GETCampy protocol: 300 diarrhoea cases, 135 paired community controls and up to 400 community reservoir animals."
+          "Targets are from the published GETCampy protocol: 300 diarrhoea cases, 135 community children in the control cohort and up to 400 community reservoir animals."
         ]
       }
     },
@@ -462,7 +462,7 @@
       },
       {
         "id": "controls",
-        "label": "Community controls",
+        "label": "Community children",
         "sub": "under 5 years",
         "enrolled": 22,
         "target": 135
@@ -746,7 +746,7 @@
     "The 25 September slide states “148 specimens from 48 human”, but the cohort table on the same slide lists 28 cases, 10 community children and 12 household members (50 enrolled in total). The dashboard labels 50 explicitly as the cohort-table total rather than treating the conflicting narrative figure as resolved.",
     "The specimen-type total row on the source slide is internally inconsistent: RA 28 + DP 28 + DS 28 + ST 40 + SA 20 = 144, although the slide reports 148 total specimens. The dashboard therefore does not invent corrected ST/SA totals; it displays the explicit cohort totals instead: 104 case specimens, 20 community-child specimens and 24 household-member specimens = 148.",
     "PCR results were available for 23 of 28 diarrhoea cases; five were pending at the time of the report. PCR is not reported for community children or household members.",
-    "Progress targets are from the published GETCampy protocol: 300 diarrhoea cases, 135 paired community controls and up to 400 community reservoir animals (up to 100 in each of four reservoir groups)."
+    "Progress targets are from the published GETCampy protocol: 300 diarrhoea cases, 135 community children in the control cohort and up to 400 community reservoir animals (up to 100 in each of four reservoir groups)."
   ],
   "progress": [
     {
@@ -756,7 +756,7 @@
       "context": "Gambia enrolment target"
     },
     {
-      "label": "Community controls",
+      "label": "Community children",
       "value": 22,
       "target": 135,
       "context": "Gambia protocol target"
