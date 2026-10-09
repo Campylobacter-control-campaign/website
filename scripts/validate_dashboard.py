@@ -15,7 +15,7 @@ FORBIDDEN = {
     "dob","date_of_birth","address","phone","email","gps","latitude","longitude",
     "free_text","notes_free_text"
 }
-ALLOWED_STATUS = {"active","preparing","inactive","complete"}
+ALLOWED_STATUS = {"active","sampling","preparing","inactive","complete"}
 REPORTING_STATUS = {"active","complete"}
 
 def fail(msg): raise SystemExit(msg)
@@ -42,6 +42,7 @@ def validate_site(site_id, site):
     if site["status"] not in ALLOWED_STATUS: fail(f"{trail}.status is invalid")
     if site["data"] is None:
         if site["status"] == "active": fail(f"{trail} is active but has no aggregate data")
+        # sampling means fieldwork has started, but no approved numeric site feed exists yet.
         return False
     if site["status"] not in REPORTING_STATUS:
         fail(f"{trail} contains aggregate data while status is {site['status']!r}")
@@ -83,6 +84,16 @@ def validate_site(site_id, site):
     a=d["animals"]["community"]
     for k in ("sampled","target","specimens","tested","positive"): nonneg_int(a[k],trail+".animals.community."+k)
     if a["positive"] > a["tested"]: fail(f"{trail}: animal positives exceed tested")
+    species=d["animals"].get("species",[])
+    if species and all("tested" in x and "positive" in x for x in species):
+        for x in species:
+            nonneg_int(x["value"],trail+".animals.species.sampled")
+            nonneg_int(x["tested"],trail+".animals.species.tested")
+            nonneg_int(x["positive"],trail+".animals.species.positive")
+            if x["positive"] > x["tested"] or x["tested"] > x["value"]:
+                fail(f"{trail}: invalid species testing denominator")
+        if sum(x["value"] for x in species) != a["sampled"] or sum(x["tested"] for x in species) != a["tested"] or sum(x["positive"] for x in species) != a["positive"]:
+            fail(f"{trail}: species breakdown does not reconcile to community animal totals")
     return True
 
 reporting=0
