@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>People · Campylobacter Control Campaign</title>
-  <meta name="description" content="Coordinating investigators of the Campylobacter Control Campaign.">
+  <meta name="description" content="Coordinating investigators and project researchers of the Campylobacter Control Campaign.">
   <link rel="stylesheet" href="assets/styles.css">
   <style>
     .coordination-team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -14,6 +14,14 @@
     .profile-links{margin-top:auto;display:flex;gap:.45rem;flex-wrap:wrap}
     @media(max-width:1000px){.coordination-team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:650px){.coordination-team-grid{grid-template-columns:1fr}}
+    .contributor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;margin-top:1.4rem}
+    .contributor-group{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow)}
+    .contributor-group h3{margin:0 0 .8rem}
+    .contributor-list{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+    .contributor-list li{border-top:1px solid var(--line);padding-top:.6rem}
+    .contributor-name{font-weight:750;display:block}
+    .contributor-role{color:var(--muted);font-size:.88rem;display:block;margin-top:.15rem}
+    @media(max-width:760px){.contributor-grid{grid-template-columns:1fr}}
   </style>
   <link rel="alternate" hreflang="fr" href="fr/profiles.html">
   <link rel="canonical" href="https://campylobacter-control-campaign.github.io/website/profiles.html">
@@ -22,7 +30,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Campylobacter Control Campaign">
   <meta property="og:title" content="People · Campylobacter Control Campaign">
-  <meta property="og:description" content="Coordinating investigators of the Campylobacter Control Campaign.">
+  <meta property="og:description" content="Coordinating investigators and project researchers of the Campylobacter Control Campaign.">
   <meta property="og:url" content="https://campylobacter-control-campaign.github.io/website/profiles.html">
   <meta property="og:image" content="https://campylobacter-control-campaign.github.io/website/assets/CCClogo.png">
   <meta name="twitter:card" content="summary">
@@ -35,10 +43,11 @@
   <main>
     <section class="page-hero">
       <p class="section-kicker">People</p>
-      <h1>Coordinating investigators</h1>
+      <h1>People</h1>
       <p class="lead">Sam Sheppard leads CCC, with coordination spanning genomics, epidemiology, microbiology, sequencing, economics and One Health.</p>
     </section>
     <section class="page">
+      <h2>Coordinating investigators</h2>
       <div class="profile-grid coordination-team-grid">
         <article class="profile-card"><h3>Samuel K. Sheppard</h3><p class="profile-role">University of Oxford · Principal investigator</p><p class="profile-bio">Microbial genomicist studying pathogen evolution, host adaptation, transmission and antimicrobial resistance.</p><div class="profile-links"><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/samuel-sheppard">Profile ↗</a></div></article>
         <article class="profile-card"><h3>Martin Antonio</h3><p class="profile-role">MRC Unit The Gambia at LSHTM · Molecular microbiology</p><p class="profile-bio">Uses molecular technologies for infectious-disease diagnosis, outbreak investigation, surveillance and antimicrobial-resistance research.</p><div class="profile-links"><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/antonio.martin">Profile ↗</a></div></article>
@@ -53,13 +62,35 @@
         <article class="profile-card"><h3>Stella Ifeanyi Smith</h3><p class="profile-role">Nigeria · Molecular epidemiology &amp; AMR</p><p class="profile-bio">Medical microbiologist specialising in molecular epidemiology, antimicrobial resistance and infectious-disease microbiomes.</p><div class="profile-links"><a class="profile-chip" href="https://www.vacamr.org/stella-ifeanyi-smith">Profile ↗</a></div></article>
         <article class="profile-card"><h3>Brendan W. Wren</h3><p class="profile-role">LSHTM · Microbial pathogenesis &amp; vaccines</p><p class="profile-bio">Studies bacterial pathogenesis, genome biology and glycoengineering, including development of glycoconjugate vaccines.</p><div class="profile-links"><a class="profile-chip" href="https://www.lshtm.ac.uk/aboutus/people/wren.brendan">Profile ↗</a></div></article>
       </div>
-      <h2 style="margin-top:2rem">Project researchers</h2>
-      <p class="wide">Researchers contributing to CCC's genomics, metagenomics and vaccine-development work.</p>
-      <div class="profile-grid coordination-team-grid">
-        <article class="profile-card"><h3>Madison Goforth</h3><p class="profile-role">University of Oxford · DPhil researcher, genomics &amp; metagenomics</p><p class="profile-bio">Studies <em>Campylobacter</em> genomics and metagenomics in low- and middle-income countries, including source attribution and antimicrobial-resistance genes.</p><div class="profile-links"><a class="profile-chip" href="https://www.biology.ox.ac.uk/people/madison-goforth">Oxford profile ↗</a></div></article>
-        <article class="profile-card"><h3>Burhan Lehri</h3><p class="profile-role">LSHTM · Postdoctoral researcher, vaccines</p><p class="profile-bio">Molecular and computational biologist contributing to the LSHTM vaccine team, with expertise in bacterial genomics and glycoengineering.</p><div class="profile-links"><a class="profile-chip" href="https://www.lshtm.ac.uk/research/centres-projects-groups/wrenlab">Wren Lab ↗</a></div></article>
+      <h2 style="margin-top:2rem">Project team and collaborators</h2>
+      <p class="wide">Field and research colleagues across partner institutions. Coordinating investigators are listed above and are not repeated here.</p>
+      <div class="contributor-grid">
+        <section class="contributor-group"><h3>University of Oxford · IOI</h3><ul class="contributor-list">
+          <li><span class="contributor-name"><a href="https://www.biology.ox.ac.uk/people/madison-goforth">Madison Goforth ↗</a></span><span class="contributor-role">DPhil researcher · Campylobacter genomics and metagenomics</span></li>
+          <li><span class="contributor-name"><a href="https://sheppardlab.wordpress.com/people/">Ahmed Taha Aboushady ↗</a></span><span class="contributor-role">DPhil researcher · antimicrobial-resistance surveillance</span></li>
+        </ul></section>
+        <section class="contributor-group"><h3>LSHTM · London vaccine team</h3><ul class="contributor-list">
+          <li><span class="contributor-name"><a href="https://www.lshtm.ac.uk/research/centres-projects-groups/wrenlab">Burhan Lehri ↗</a></span><span class="contributor-role">Postdoctoral researcher · vaccine development</span></li>
+        </ul></section>
+        <section class="contributor-group"><h3>MRC Unit The Gambia at LSHTM</h3><ul class="contributor-list">
+          <li><span class="contributor-name">Henry Badji</span></li>
+          <li><span class="contributor-name">Bakary Conteh</span></li>
+          <li><span class="contributor-name">Samba Juma Jallow</span></li>
+          <li><span class="contributor-name">Md Rafiquzzaman</span></li>
+          <li><span class="contributor-name">Sessinou Benoit Assogba</span></li>
+          <li><span class="contributor-name">Binta Faye</span></li>
+        </ul></section>
+        <section class="contributor-group"><h3>Nigeria · partner teams</h3><ul class="contributor-list">
+          <li><span class="contributor-name">Abraham Ajayi</span></li>
+          <li><span class="contributor-name">Utibeima Udo Essiet</span></li>
+        </ul></section>
+        <section class="contributor-group"><h3>Côte d’Ivoire · CSRS</h3><ul class="contributor-list">
+          <li><span class="contributor-name">Amelan Marie-Flore Didia</span></li>
+          <li><span class="contributor-name">Kouassi Firmin Missa</span></li>
+          <li><span class="contributor-name">Sylvain Gnamien Traoré</span></li>
+        </ul></section>
       </div>
-      <p class="small" style="margin-top:2rem"><a href="consortium.html">View the wider CCC consortium →</a></p>
+<p class="small" style="margin-top:2rem"><a href="consortium.html">View the wider CCC consortium →</a></p>
     </section>
   </main>
   <footer class="site-footer"><p><a href="index.html">Campylobacter Control Campaign</a></p><p class="small">One Health · Genomics · Prevention</p></footer>
