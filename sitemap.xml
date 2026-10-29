@@ -139,4 +139,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://campylobacter-control-campaign.github.io/website/fr/news-nigeria-sampling.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://campylobacter-control-campaign.github.io/website/news-nigeria-sampling.html"/>
   </url>
+  <url><loc>https://campylobacter-control-campaign.github.io/website/news-cote-ivoire-launch.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://campylobacter-control-campaign.github.io/website/news-cote-ivoire-launch.html"/><xhtml:link rel="alternate" hreflang="fr" href="https://campylobacter-control-campaign.github.io/website/fr/news-cote-ivoire-launch.html"/></url>
+  <url><loc>https://campylobacter-control-campaign.github.io/website/fr/news-cote-ivoire-launch.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://campylobacter-control-campaign.github.io/website/fr/news-cote-ivoire-launch.html"/><xhtml:link rel="alternate" hreflang="en" href="https://campylobacter-control-campaign.github.io/website/news-cote-ivoire-launch.html"/></url>
 </urlset>
