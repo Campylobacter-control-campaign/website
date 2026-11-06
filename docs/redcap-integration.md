@@ -26,3 +26,28 @@ The script prints **only** the report ID, number of returned rows and field name
 5. Host that aggregate-only feed behind HTTPS and configure `CCC_DASHBOARD_FEED_URL` (and optional bearer token) for the existing fortnightly PR workflow. Keep REDCap API credentials and raw responses entirely within the approved environment.
 
 The public dashboard and French translation already consume the same `dashboard.json`. No direct REDCap connection should be made from a browser or public GitHub runner.
+
+## Candidate dashboard generation from reviewed aggregates
+
+A second script, `scripts/redcap_aggregate_adapter.py`, converts a **complete, approved site-level aggregate snapshot** into a candidate `dashboard.next.json` and runs the repository validator before writing the file. It is intentionally **not** a raw REDCap-to-public converter: the report field mapping and participant/specimen deduplication rules have not yet been verified.
+
+Input format (structure only; values below are placeholders and must **not** be published):
+
+```json
+{
+  "site": "gambia",
+  "as_of": "2026-11-06",
+  "source": "Approved Gambia aggregate summary",
+  "approved_by": "Authorised CCC data reviewer",
+  "data": {}
+}
+```
+
+Replace `data` with a **complete** site `data` object matching `dashboard.json > sites > gambia > data`, using a single approved reporting cut-off. Incomplete snapshots fail. The script also refuses unvalidated multi-site headline aggregation. The existing dashboard validator checks totals, but it cannot establish the scientific correctness of the source definitions or guarantee that arbitrary free-text values are anonymous: review and approval are mandatory.
+
+```sh
+python scripts/redcap_aggregate_adapter.py approved_gambia_aggregates.json --output dashboard.next.json
+python scripts/validate_dashboard.py dashboard.next.json
+```
+
+Do not commit `approved_gambia_aggregates.json` or `dashboard.next.json` until reviewed. No live REDCap calls have been made by these repository changes.
