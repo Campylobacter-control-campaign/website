@@ -34,6 +34,6 @@ Dashboard updates can be checked automatically after the fortnightly programme-m
 
 ## Funding
 
-CCC is supported by Wellcome Trust grant 088786/C/09/Z and follows on from GETCampy, MRC MR/V001213/2.
+CCC is supported by Wellcome Trust grant 310742/Z/24/Z and follows on from GETCampy, MRC MR/V001213/2.
 
 - [GETCampy award record](https://gtr.ukri.org/projects?ref=MR%2FV001213%2F2)
