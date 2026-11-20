@@ -178,20 +178,20 @@ function selectView(id){currentView=id;renderTabs();id==='all'?renderProgramme()
 function renderProgramme(){
  document.getElementById('programme-overview').hidden=false;document.getElementById('site-detail').hidden=true;
  document.getElementById('dashboard-title').textContent='Programme CCC';document.getElementById('dashboard-lead').innerHTML='Échantillonnage One Health dans les sites partenaires de CCC.';
- document.getElementById('updated').textContent=dashboard.updated;document.getElementById('source').textContent=(dashboard.programme.reporting_sites+(dashboard.sites.nigeria.data?0:1))+' site rapporteur'+((dashboard.programme.reporting_sites+(dashboard.sites.nigeria.data?0:1))===1?'':'s');
- document.getElementById('programme-summary').innerHTML=dashboard.programme.headline.map((x,i)=>dashboard.sites.nigeria.data?x:{...x,value:x.value+([10,5,0,64][i]||0),context:i===2?"Gambie uniquement ; Nigeria non renseigné":"Gambie et Nigeria (rapport provisoire)"}).map(x=>'<article class="programme-kpi"><strong>'+fmt(x.value)+'</strong><b>'+x.label+'</b><span>'+x.context+'</span></article>').join('');
+ document.getElementById('updated').textContent=dashboard.sites.nigeria.data?dashboard.updated:"20 novembre 2026";document.getElementById('source').textContent=(dashboard.programme.reporting_sites+(dashboard.sites.nigeria.data?0:1))+' site rapporteur'+((dashboard.programme.reporting_sites+(dashboard.sites.nigeria.data?0:1))===1?'':'s');
+ document.getElementById('programme-summary').innerHTML=(dashboard.sites.nigeria.data?dashboard.programme.headline:[{"label":"Dossiers de dépistage","value":158,"context":"REDCap · provisional / provisoire"},{"label":"Cas inclus","value":77,"context":"REDCap · provisional / provisoire"},{"label":"Prélèvements humains","value":547,"context":"REDCap · provisional / provisoire"},{"label":"Animaux échantillonnés (rapport antérieur)","value":186,"context":"Rapports antérieurs"}]).map(x=>'<article class="programme-kpi"><strong>'+fmt(x.value)+'</strong><b>'+x.label+'</b><span>'+x.context+'</span></article>').join('');
  document.getElementById('site-status-grid').innerHTML=Object.entries(dashboard.sites).map(([id,s])=>'<article class="site-status-card"><span class="status-pill '+s.status+'">'+tr(s.status)+'</span><h3>'+s.label+'</h3><p>'+(id==='nigeria'&&!s.data?"Échantillonnage en cours ; chiffres provisoires disponibles.":s.note)+'</p>'+((s.data||id==='nigeria')?'<button class="button secondary" type="button" data-open-site="'+id+'">Voir le site</button>':'')+'</article>').join('');
  document.querySelectorAll('[data-open-site]').forEach(b=>b.addEventListener('click',()=>selectView(b.dataset.openSite)));
 }
 function renderSite(id){
  const site=dashboard.sites[id];if(!site){renderProgramme();return}
- if(id==='nigeria'&&!site.data){
+ if(['gambia','nigeria'].includes(id)&&(!site.updated||!site.data||site.updated==='23 October 2026'||site.updated==='23 octobre 2026')){
  document.getElementById('programme-overview').hidden=false;document.getElementById('site-detail').hidden=true;
  document.getElementById('dashboard-title').textContent=site.label;
- document.getElementById('dashboard-lead').textContent="Données provisoires du site ; mise à jour REDCap en attente.";
- document.getElementById('updated').textContent="Rapport annuel du 17 novembre 2026";
- document.getElementById('source').textContent="Rapport du site ; date de collecte non précisée";
- const interim=[{"label":"Enfants dépistés","value":10},{"label":"Cas inclus","value":5},{"label":"Enfants positifs (culture confirmée par PCR)","value":2},{"label":"Animaux échantillonnés","value":64},{"label":"Résultats animaux positifs par culture","value":12},{"label":"Prélèvements environnementaux","value":8},{"label":"Positif environnemental provisoire","value":1}];
+ document.getElementById('dashboard-lead').textContent="Extraction REDCap provisoire, non validée. Les chiffres animaux proviennent des rapports antérieurs.";
+ document.getElementById('updated').textContent="20 novembre 2026";
+ document.getElementById('source').textContent='REDCap';
+ const interim=id==='gambia'?[{"label":"Dossiers de dépistage","value":146},{"label":"Enfants éligibles","value":113},{"label":"Cas inclus","value":71},{"label":"Enfants communautaires","value":63},{"label":"Membres du foyer","value":73},{"label":"Prélèvements humains","value":533},{"label":"Animaux échantillonnés (rapport antérieur)","value":122}]:[{"label":"Dossiers de dépistage","value":12},{"label":"Enfants éligibles","value":10},{"label":"Cas inclus","value":6},{"label":"Prélèvements humains","value":14},{"label":"Animaux échantillonnés (rapport antérieur)","value":64}];
  document.getElementById('programme-summary').innerHTML=interim.map(x=>'<article class="programme-kpi"><strong>'+fmt(x.value)+'</strong><b>'+x.label+'</b></article>').join('');
  document.getElementById('site-status-grid').innerHTML='';return;
  }
