@@ -112,3 +112,55 @@ if not isinstance(p.get("headline"),list) or not p["headline"]: fail("programme.
 for i,x in enumerate(p["headline"]): nonneg_int(x["value"],f"programme.headline[{i}].value")
 
 print(f"OK: {path} contains schema v2 aggregate data for {reporting} reporting site(s) ({root['updated']})")
+
+
+# Strict allowlist for mutable aggregate streams.
+from datetime import date
+def keys(v, expected):
+    if not isinstance(v,dict) or set(v)!=set(expected): fail("Unexpected aggregate fields")
+def counts(v, expected, nullable=()):
+    keys(v,expected)
+    for k,n in v.items():
+        if n is None and k in nullable: continue
+        nonneg_int(n,k)
+def iso(v):
+    if not isinstance(v,str) or date.fromisoformat(v).isoformat()!=v: fail("Invalid ISO source date")
+def check_streams(streams):
+    keys(streams,("gambia","nigeria","cote-divoire"))
+    for country, ss in streams.items():
+        expected={"recruitment","human_collection","human_lab","community"}
+        if country=="nigeria" and "earlier_report" in ss: expected.add("earlier_report")
+        keys(ss,expected)
+        for kind,s in ss.items():
+            keys(s,("data","status","as_of"))
+            v=s["data"]
+            if v is None:
+                if s["status"]!="missing" or s["as_of"] is not None: fail("Missing stream metadata invalid")
+                continue
+            if s["status"] not in ("approved","provisional","retained","historical"): fail("Invalid stream status")
+            iso(s["as_of"])
+            if kind=="recruitment":
+                counts(v,("screened_record_ids","eligible","cases","controls","household"),("controls","household"))
+                if not v["cases"]<=v["eligible"]<=v["screened_record_ids"]: fail("Recruitment cascade")
+            elif kind=="human_collection": counts(v,("collected",))
+            elif kind=="earlier_report": counts(v,("animals_sampled",))
+            elif kind=="human_lab":
+                counts(v,("received","culture_tested","culture_positive","pcr_tested","pcr_positive"))
+                for t in ("culture","pcr"):
+                    if not v[t+"_positive"]<=v[t+"_tested"]<=v["received"]: fail("Laboratory cascade")
+            else:
+                keys(v,("animal","environment","water"))
+                for t,a in v.items():
+                    fields=("collected","received","culture_tested","culture_positive")
+                    if t=="animal":
+                        keys(a,(*fields,"animal_sampling_records","species_sampling_records"))
+                        nonneg_int(a["animal_sampling_records"],"animal records")
+                        sp=a["species_sampling_records"]
+                        if not isinstance(sp,dict) or set(sp)-({str(i) for i in range(1,12)}|{"unknown_or_conflicting"}): fail("Species keys")
+                        for n in sp.values(): nonneg_int(n,"species count")
+                        if sum(sp.values())!=a["animal_sampling_records"]: fail("Species reconciliation")
+                    else: keys(a,fields)
+                    counts({k:a[k] for k in fields},fields)
+                    if not a["culture_positive"]<=a["culture_tested"]<=a["received"]<=a["collected"]: fail("Community cascade")
+if "streams" not in root: fail("Missing independently dated streams")
+check_streams(root["streams"])
