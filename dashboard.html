@@ -61,6 +61,22 @@ body{background:#fff;color:var(--ink)}
 @media(max-width:1180px){.dashboard-hero{grid-template-columns:1fr}.one-health{max-width:760px}.span-4,.span-6{grid-column:span 6}.span-2,.span-3{grid-column:span 3}.site-tabs{grid-template-columns:repeat(3,1fr)}.site-tab:nth-child(3){border-radius:0 7px 7px 0}.site-tab:nth-child(4){border-radius:7px 0 0 7px}}
 @media(max-width:780px){.dashboard-shell{padding:18px 12px 42px}.hero-copy h1{font-size:3rem}.one-health{grid-template-columns:1fr 1fr 1fr}.oh-art{height:58px}.oh-art img{height:48px}.site-tabs{display:flex;overflow-x:auto}.site-tab{min-width:130px}.span-2,.span-3,.span-4,.span-6,.span-12{grid-column:1/-1}.specimen-layout{grid-template-columns:135px 1fr}.animal-strip{grid-template-columns:repeat(3,1fr)}.animal-item:nth-child(4){border-left:0}.programme-summary,.site-status-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.one-health{display:none}.testing-grid,.cohort-chart,.environment{grid-template-columns:1fr}.test-panel+.test-panel,.env-box+.env-box{border-left:0;border-top:1px solid #e2e8e5;padding-top:10px;margin-top:8px}.kpi-row{grid-template-columns:1fr}.kpi{padding:10px 0}.kpi+.kpi{border-left:0;border-top:1px solid #d7e2df}.specimen-layout{grid-template-columns:1fr}.dashboard-notes{grid-template-columns:1fr}.programme-summary,.site-status-grid{grid-template-columns:1fr}}
+/* Dashboard spacing and responsive country grid */
+.site-tabs{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:16px 0 20px}
+.site-tab,.site-tab:first-child,.site-tab:last-child,.site-tab:nth-child(3),.site-tab:nth-child(4){border-radius:8px;padding:12px 8px;line-height:1.25;min-height:54px}
+.programme-overview{margin-top:18px}
+.programme-summary,.site-status-grid{gap:16px;margin-bottom:20px}
+.site-status-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.programme-kpi,.site-status-card{padding:18px;min-width:0;overflow-wrap:anywhere}
+.programme-kpi strong{line-height:1.15;margin-bottom:8px}
+.programme-kpi b,.programme-kpi span{display:block;line-height:1.4}
+.programme-kpi span{margin-top:6px}
+.site-status-card{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.site-status-card h3,.site-status-card p{margin:0}
+.site-status-card .button{margin-top:auto}
+.site-status-grid:empty{display:none}
+@media(max-width:780px){.site-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}.site-tab{min-width:0}.site-status-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.programme-summary,.site-status-grid{grid-template-columns:1fr;gap:10px}.programme-kpi,.site-status-card{padding:14px}}
 </style>
   <link rel="alternate" hreflang="fr" href="fr/dashboard.html">
   <link rel="canonical" href="https://campylobacter-control-campaign.github.io/website/dashboard.html">
@@ -137,7 +153,7 @@ function renderProgramme(){
  document.getElementById('dashboard-title').textContent='CCC programme';document.getElementById('dashboard-lead').innerHTML='One Health sampling across CCC partner sites.';
  document.getElementById('updated').textContent=dashboard.sites.nigeria.data?dashboard.updated:"20 November 2026";document.getElementById('source').textContent=(dashboard.programme.reporting_sites+(dashboard.sites.nigeria.data?0:1))+' reporting site'+((dashboard.programme.reporting_sites+(dashboard.sites.nigeria.data?0:1))===1?'':'s');
  document.getElementById('programme-summary').innerHTML=(dashboard.sites.nigeria.data?dashboard.programme.headline:[{"label":"Screening records","value":158,"context":"REDCap · provisional / provisoire"},{"label":"Cases enrolled","value":77,"context":"REDCap · provisional / provisoire"},{"label":"Human specimens collected","value":547,"context":"REDCap · provisional / provisoire"},{"label":"Community animals sampled (earlier report)","value":186,"context":"Earlier site reports"}]).map(x=>'<article class="programme-kpi"><strong>'+fmt(x.value)+'</strong><b>'+x.label+'</b><span>'+x.context+'</span></article>').join('');
- document.getElementById('site-status-grid').innerHTML=Object.entries(dashboard.sites).map(([id,s])=>'<article class="site-status-card"><span class="status-pill '+s.status+'">'+s.status+'</span><h3>'+s.label+'</h3><p>'+(id==='nigeria'&&!s.data?"Sampling underway; interim counts available.":s.note)+'</p>'+((s.data||id==='nigeria')?'<button class="button secondary" type="button" data-open-site="'+id+'">View site</button>':'')+'</article>').join('');
+ document.getElementById('site-status-grid').innerHTML=Object.entries(dashboard.sites).filter(([id])=>['gambia','nigeria','cote-divoire'].includes(id)).map(([id,s])=>'<article class="site-status-card"><span class="status-pill '+s.status+'">'+s.status+'</span><h3>'+s.label+'</h3><p>'+(id==='nigeria'&&!s.data?"Sampling underway; interim counts available.":s.note)+'</p>'+((s.data||id==='nigeria')?'<button class="button secondary" type="button" data-open-site="'+id+'">View site</button>':'')+'</article>').join('');
  document.querySelectorAll('[data-open-site]').forEach(b=>b.addEventListener('click',()=>selectView(b.dataset.openSite)));
 }
 function renderSite(id){
