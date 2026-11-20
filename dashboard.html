@@ -135,13 +135,23 @@ function selectView(id){currentView=id;renderTabs();id==='all'?renderProgramme()
 function renderProgramme(){
  document.getElementById('programme-overview').hidden=false;document.getElementById('site-detail').hidden=true;
  document.getElementById('dashboard-title').textContent='CCC programme';document.getElementById('dashboard-lead').innerHTML='One Health sampling across CCC partner sites.';
- document.getElementById('updated').textContent=dashboard.updated;document.getElementById('source').textContent=dashboard.programme.reporting_sites+' reporting site'+(dashboard.programme.reporting_sites===1?'':'s');
- document.getElementById('programme-summary').innerHTML=dashboard.programme.headline.map(x=>'<article class="programme-kpi"><strong>'+fmt(x.value)+'</strong><b>'+x.label+'</b><span>'+x.context+'</span></article>').join('');
- document.getElementById('site-status-grid').innerHTML=Object.entries(dashboard.sites).map(([id,s])=>'<article class="site-status-card"><span class="status-pill '+s.status+'">'+s.status+'</span><h3>'+s.label+'</h3><p>'+s.note+'</p>'+(s.data?'<button class="button secondary" type="button" data-open-site="'+id+'">View site</button>':'')+'</article>').join('');
+ document.getElementById('updated').textContent=dashboard.updated;document.getElementById('source').textContent=(dashboard.programme.reporting_sites+(dashboard.sites.nigeria.data?0:1))+' reporting site'+((dashboard.programme.reporting_sites+(dashboard.sites.nigeria.data?0:1))===1?'':'s');
+ document.getElementById('programme-summary').innerHTML=dashboard.programme.headline.map((x,i)=>dashboard.sites.nigeria.data?x:{...x,value:x.value+([10,5,0,64][i]||0),context:i===2?"Gambia only; Nigeria not reported":"Gambia and Nigeria (interim site report)"}).map(x=>'<article class="programme-kpi"><strong>'+fmt(x.value)+'</strong><b>'+x.label+'</b><span>'+x.context+'</span></article>').join('');
+ document.getElementById('site-status-grid').innerHTML=Object.entries(dashboard.sites).map(([id,s])=>'<article class="site-status-card"><span class="status-pill '+s.status+'">'+s.status+'</span><h3>'+s.label+'</h3><p>'+(id==='nigeria'&&!s.data?"Sampling underway; interim counts available.":s.note)+'</p>'+((s.data||id==='nigeria')?'<button class="button secondary" type="button" data-open-site="'+id+'">View site</button>':'')+'</article>').join('');
  document.querySelectorAll('[data-open-site]').forEach(b=>b.addEventListener('click',()=>selectView(b.dataset.openSite)));
 }
 function renderSite(id){
  const site=dashboard.sites[id];if(!site){renderProgramme();return}
+ if(id==='nigeria'&&!site.data){
+ document.getElementById('programme-overview').hidden=false;document.getElementById('site-detail').hidden=true;
+ document.getElementById('dashboard-title').textContent=site.label;
+ document.getElementById('dashboard-lead').textContent="Interim site report; REDCap update pending.";
+ document.getElementById('updated').textContent="Year 1 report, 17 November 2026";
+ document.getElementById('source').textContent="Site report; exact data cutoff unspecified";
+ const interim=[{"label":"Children screened","value":10},{"label":"Cases enrolled","value":5},{"label":"Children positive (PCR-confirmed culture)","value":2},{"label":"Animals sampled","value":64},{"label":"Animal culture-positive results","value":12},{"label":"Environmental samples","value":8},{"label":"Provisional environmental positive","value":1}];
+ document.getElementById('programme-summary').innerHTML=interim.map(x=>'<article class="programme-kpi"><strong>'+fmt(x.value)+'</strong><b>'+x.label+'</b></article>').join('');
+ document.getElementById('site-status-grid').innerHTML='';return;
+ }
  if(!site.data){document.getElementById('programme-overview').hidden=false;document.getElementById('site-detail').hidden=true;document.getElementById('dashboard-title').textContent=site.label;document.getElementById('dashboard-lead').textContent=site.note+'.';document.getElementById('updated').textContent=site.status==='sampling'?'Sampling underway':'Not yet reporting';document.getElementById('source').textContent='Aggregate feed pending';document.getElementById('programme-summary').innerHTML='<article class="programme-kpi" style="grid-column:1/-1"><strong>'+(site.status==='sampling'?'Sampling underway':'Coming soon')+'</strong><b>'+site.label+'</b><span>'+(site.status==='sampling'?'Animal positives have been reported in Nigeria, but verified counts and denominators are not yet available. ':'')+'One Health recruitment, sampling and laboratory figures will appear after the first approved aggregate report.</span></article>';document.getElementById('site-status-grid').innerHTML='';return}
  const d=site.data;document.getElementById('programme-overview').hidden=true;document.getElementById('site-detail').hidden=false;
  document.getElementById('dashboard-title').textContent=site.label;document.getElementById('dashboard-lead').innerHTML='One Health sampling to understand and control <em>Campylobacter</em>.';
