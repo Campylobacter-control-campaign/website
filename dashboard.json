@@ -916,5 +916,126 @@
         73
       ]
     }
+  },
+  "streams": {
+    "gambia": {
+      "recruitment": {
+        "data": {
+          "screened_record_ids": 146,
+          "eligible": 113,
+          "cases": 71,
+          "controls": 63,
+          "household": 73
+        },
+        "status": "provisional",
+        "as_of": "2026-11-20"
+      },
+      "human_collection": {
+        "data": {
+          "collected": 533
+        },
+        "status": "provisional",
+        "as_of": "2026-11-20"
+      },
+      "community": {
+        "data": {
+          "animal": {
+            "collected": 358,
+            "received": 338,
+            "culture_tested": 144,
+            "culture_positive": 22,
+            "animal_sampling_records": 179,
+            "species_sampling_records": {
+              "1": 61,
+              "2": 29,
+              "3": 14,
+              "4": 24,
+              "5": 35,
+              "6": 1,
+              "7": 12,
+              "unknown_or_conflicting": 3
+            }
+          },
+          "environment": {
+            "collected": 3,
+            "received": 2,
+            "culture_tested": 2,
+            "culture_positive": 0
+          },
+          "water": {
+            "collected": 2,
+            "received": 0,
+            "culture_tested": 0,
+            "culture_positive": 0
+          }
+        },
+        "status": "provisional",
+        "as_of": "2026-11-20"
+      },
+      "human_lab": {
+        "data": null,
+        "status": "missing",
+        "as_of": null
+      }
+    },
+    "nigeria": {
+      "recruitment": {
+        "data": {
+          "screened_record_ids": 12,
+          "eligible": 10,
+          "cases": 6,
+          "controls": null,
+          "household": null
+        },
+        "status": "provisional",
+        "as_of": "2026-11-20"
+      },
+      "human_collection": {
+        "data": {
+          "collected": 14
+        },
+        "status": "provisional",
+        "as_of": "2026-11-20"
+      },
+      "community": {
+        "data": null,
+        "status": "missing",
+        "as_of": null
+      },
+      "earlier_report": {
+        "data": {
+          "animals_sampled": 64
+        },
+        "status": "historical",
+        "as_of": "2026-11-18"
+      },
+      "human_lab": {
+        "data": null,
+        "status": "missing",
+        "as_of": null
+      }
+    },
+    "cote-divoire": {
+      "recruitment": {
+        "data": null,
+        "status": "missing",
+        "as_of": null
+      },
+      "human_collection": {
+        "data": null,
+        "status": "missing",
+        "as_of": null
+      },
+      "community": {
+        "data": null,
+        "status": "missing",
+        "as_of": null
+      },
+      "human_lab": {
+        "data": null,
+        "status": "missing",
+        "as_of": null
+      }
+    }
   }
 }
