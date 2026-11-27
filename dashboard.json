@@ -988,14 +988,14 @@
           "household": null
         },
         "status": "provisional",
-        "as_of": "2026-11-20"
+        "as_of": "2026-11-27"
       },
       "human_collection": {
         "data": {
           "collected": 14
         },
         "status": "provisional",
-        "as_of": "2026-11-20"
+        "as_of": "2026-11-27"
       },
       "community": {
         "data": null,
