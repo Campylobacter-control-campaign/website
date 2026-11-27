@@ -371,9 +371,9 @@
     "cote-divoire": {
       "label": "Côte d’Ivoire",
       "status": "preparing",
-      "note": "CAMPYLO project launched in Taabo on 8 October 2026; validated sampling data not yet available",
-      "updated": "8 October 2026",
-      "source": "CAMPYLO Taabo launch report · 8 October 2026",
+      "note": "Preparations underway for a satellite laboratory in Taabo to support field sampling; sampling start not yet confirmed.",
+      "updated": "27 November 2026",
+      "source": "CCC site coordination update · 27 November 2026",
       "data": null
     },
     "burkina-faso": {
@@ -412,7 +412,7 @@
       "id": "cote-divoire",
       "label": "Côte d’Ivoire",
       "status": "preparing",
-      "note": "Sampling planned after Nigeria"
+      "note": "Preparations underway for a satellite laboratory in Taabo to support field sampling; sampling start not yet confirmed."
     },
     {
       "id": "burkina-faso",
@@ -921,56 +921,56 @@
     "gambia": {
       "recruitment": {
         "data": {
-          "screened_record_ids": 146,
-          "eligible": 113,
-          "cases": 71,
+          "screened_record_ids": 155,
+          "eligible": 118,
+          "cases": 76,
           "controls": 63,
           "household": 73
         },
         "status": "provisional",
-        "as_of": "2026-11-20"
+        "as_of": "2026-11-27"
       },
       "human_collection": {
         "data": {
-          "collected": 533
+          "collected": 552
         },
         "status": "provisional",
-        "as_of": "2026-11-20"
+        "as_of": "2026-11-27"
       },
       "community": {
         "data": {
           "animal": {
-            "collected": 358,
-            "received": 338,
-            "culture_tested": 144,
-            "culture_positive": 22,
-            "animal_sampling_records": 179,
+            "collected": 438,
+            "received": 418,
+            "culture_tested": 194,
+            "culture_positive": 32,
+            "animal_sampling_records": 219,
             "species_sampling_records": {
-              "1": 61,
+              "1": 71,
               "2": 29,
-              "3": 14,
-              "4": 24,
-              "5": 35,
+              "3": 24,
+              "4": 28,
+              "5": 41,
               "6": 1,
-              "7": 12,
+              "7": 22,
               "unknown_or_conflicting": 3
             }
           },
           "environment": {
             "collected": 3,
-            "received": 2,
+            "received": 3,
             "culture_tested": 2,
             "culture_positive": 0
           },
           "water": {
             "collected": 2,
-            "received": 0,
+            "received": 1,
             "culture_tested": 0,
             "culture_positive": 0
           }
         },
         "status": "provisional",
-        "as_of": "2026-11-20"
+        "as_of": "2026-11-27"
       },
       "human_lab": {
         "data": null,
